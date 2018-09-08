@@ -7,9 +7,11 @@ const orders = require('./lib/orders')
 const position = require('./lib/position')
 const updates = require('./lib/updates')
 const define = require('./lib/define')
+const exec = require('./lib/exec')
 
 module.exports = {
   define,
+  exec,
 
   ...data,
   ...errors,
