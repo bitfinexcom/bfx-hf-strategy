@@ -35,13 +35,14 @@
     "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "bfx-api-node-core": "bitfinexcom/bfx-api-node-core",
-    "bfx-hf-indicators": "bitfinexcom/bfx-hf-indicators",
     "bfx-api-node-util": "bitfinexcom/bfx-api-node-util",
+    "bfx-hf-indicators": "bitfinexcom/bfx-hf-indicators",
     "bfx-hf-util": "bitfinexcom/bfx-hf-util",
     "bitfinex-api-node": "^2.0.0-beta.1",
     "copy": "^0.3.1",
     "lodash": "^4.17.10",
-    "p-iteration": "^1.1.7"
+    "p-iteration": "^1.1.7",
+    "promise-throttle": "^1.0.0"
   },
   "devDependencies": {
     "babel": "^6.23.0",
