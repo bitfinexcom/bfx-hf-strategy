@@ -21,10 +21,8 @@ HFS.define({
   tf: TIME_FRAMES.ONE_MINUTE,
 
   indicators: {
-    ema: {
-      l: new EMA([100]),
-      s: new EMA([20])
-    }
+    emaL: new EMA([100]),
+    emaS: new EMA([20])
   },
 
   onEnter: require('./on_enter'),
@@ -33,7 +31,7 @@ HFS.define({
 })
 ```
 
-The above strategy defines two EMA indicators, `l` and `s`, with periods of 100 and 20 respectively, and 3 update methods; In total, 5 update methods are available:
+The above strategy defines two EMA indicators, `emaL` and `emaS`, with periods of 100 and 20 respectively, and 3 update methods; In total, 5 update methods are available:
 
 * `onEnter` - called when no position is open
 * `onUpdateLong` - called when a long position is open
@@ -62,8 +60,9 @@ module.exports = async (state = {}, update = {}) => {
   const { price, mts } = update
   const i = HFS.indicators(state)
   const iv = HFS.indicatorValues(state)
-  const emaS = _get(i, 'ema.s') // full indicator object
-  const { l, s } = iv.ema || {}
+  const { emaS } = i // full indicator object
+  const l = iv.emaL
+  const s = iv.emaS
 
   // Note that the default strategy symbol is used if no symbol is specified
   if (emaS.crossed(l)) {
