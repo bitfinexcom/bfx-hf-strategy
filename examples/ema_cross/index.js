@@ -14,10 +14,8 @@ module.exports = ({
   tf,
 
   indicators: {
-    ema: {
-      l: new EMA([100]),
-      s: new EMA([20])
-    }
+    emaL: new EMA([100]),
+    emaS: new EMA([20])
   },
 
   onEnter: require('./on_enter'),
