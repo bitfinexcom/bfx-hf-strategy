@@ -1,6 +1,6 @@
 {
   "name": "bfx-hf-strategy",
-  "version": "1.0.0-alpha",
+  "version": "1.0.0-alpha.1",
   "description": "HF strategy module",
   "main": "./index.js",
   "directories": {
