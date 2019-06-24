@@ -38,13 +38,11 @@
     "bfx-api-node-models": "^1.0.0",
     "bfx-hf-indicators": "^1.0.0",
     "bfx-hf-util": "^1.0.0",
-    "bitfinex-api-node": "^2.0.0",
     "copy": "^0.3.1",
-    "lodash": "^4.17.10",
-    "p-iteration": "^1.1.7",
-    "promise-throttle": "^1.0.0"
+    "lodash": "^4.17.10"
   },
   "devDependencies": {
+    "bitfinex-api-node": "^2.0.0",
     "babel": "^6.23.0",
     "babel-eslint": "^7.2.2",
     "babel-loader": "^6.4.1",
