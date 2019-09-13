@@ -2,7 +2,7 @@
 
 process.env.DEBUG = '*'
 
-const { Candle } = require('bitfinex-api-node/lib/models')
+const { Candle } = require('bfx-api-node-models')
 const { SYMBOLS, TIME_FRAMES } = require('bfx-hf-util')
 const logTrades = require('../lib/debug/log_trades')
 const HFS = require('../')
