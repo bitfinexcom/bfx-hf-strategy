@@ -1,0 +1,27 @@
+# 1.0.1
+- manifest: bump deps
+- meta: add github issue/pr templates
+- meta: standardize travis config
+- meta: add placeholder npm test
+- meta: add changelog
+- meta: update readme
+- meta: update examples
+
+# 1.0.0
+- refactor: use nonce() from bfx-api-node-util as order ID if backtesting
+- refactor: extract live exec logic into new bfx-hf-strategy-exec repo
+- refactor: rm historical indicator values from strategy state, now vestigial
+- feature: add example for indicator value generation
+
+# 1.0.0-alpha.2
+- refactor: use models from bfx-api-node-models
+
+# 1.0.0-alpha.1
+- feature: tag orders as originating from HF
+- manifest: rm private flag
+- manifest: use versioned bfx deps
+- meta: rm package-lock.json
+- meta: rm yarn.lock
+
+# 1.0.0-alpha
+- initial version
