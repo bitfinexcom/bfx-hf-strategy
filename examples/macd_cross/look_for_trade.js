@@ -8,6 +8,10 @@ module.exports = async (state = {}, update = {}) => {
   const current = macd.v()
   const previous = macd.prev()
 
+  if (macd.l() < 2) {
+    return state // await sufficient data
+  }
+
   const crossedOver = (
     (current.macd >= current.signal) &&
     (previous.macd <= previous.signal)
