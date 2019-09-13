@@ -16,5 +16,5 @@ module.exports = {
   ...indicators,
   ...orders,
   ...position,
-  ...updates,
+  ...updates
 }
