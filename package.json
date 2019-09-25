@@ -50,7 +50,6 @@
     "lodash": "^4.17.10"
   },
   "devDependencies": {
-    "babel": "^6.23.0",
     "babel-eslint": "^7.2.2",
     "babel-loader": "^6.4.1",
     "babel-plugin-import-directory": "^1.0.3",
