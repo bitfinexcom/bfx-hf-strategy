@@ -1,3 +1,6 @@
+# 1.0.2
+- manifest: rm babel 6 dep
+
 # 1.0.1
 - manifest: bump deps
 - meta: add github issue/pr templates
