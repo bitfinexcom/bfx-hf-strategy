@@ -1,3 +1,6 @@
+# 1.0.3
+- docs: create/update
+
 # 1.0.2
 - manifest: rm babel 6 dep
 
