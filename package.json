@@ -1,6 +1,6 @@
 {
   "name": "bfx-hf-strategy",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "HF strategy module",
   "main": "./index.js",
   "directories": {
@@ -19,7 +19,9 @@
     "unit": "NODE_ENV=test istanbul cover _mocha -- -R spec -b --recursive",
     "test-without-coverage": "NODE_ENV=test mocha -R spec -b --recursive",
     "build": "babel -q ./index.js -d ./dist && babel -q ./lib -d ./dist/lib && copy package.json dist",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build",
+    "api_docs": "node_modules/jsdoc-to-markdown/bin/cli.js lib/define.js lib/data/*.js lib/indicators/*.js lib/position/*.js lib/updates/*.js > docs/api.md",
+    "docs": "npm run api_docs"
   },
   "repository": {
     "type": "git",
@@ -69,6 +71,7 @@
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^2.0.1",
     "istanbul": "^0.4.5",
+    "jsdoc-to-markdown": "^5.0.1",
     "mocha": "^6.2.0",
     "moment": "^2.22.2",
     "sprintf-js": "^1.1.1",
