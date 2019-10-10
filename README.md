@@ -59,9 +59,9 @@ module.exports = ({
 
 ### Docs
 
-Refer to `docs/usage.md` for an overview of the strategy system and methods available at runtime, and `docs/api.md` for JSDoc-generated API documentation.
+[Refer to `docs/usage.md`](/docs/usage.md) for an overview of the strategy system and methods available at runtime, [and `docs/api.md`](/docs/api.md) for JSDoc-generated API documentation.
 
-Ready to run examples can be found in the `examples/` folder
+Ready to run examples can be found in the [`examples/` folder](/examples)
 
 ### Contributing
 
