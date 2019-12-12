@@ -1,5 +1,6 @@
 # 1.0.3
 - fix: onCandleUpdate return nextState instead of input state
+- docs: create/update
 
 # 1.0.2
 - manifest: rm babel 6 dep
