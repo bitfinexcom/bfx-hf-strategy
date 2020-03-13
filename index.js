@@ -8,6 +8,13 @@ const position = require('./lib/position')
 const updates = require('./lib/updates')
 const define = require('./lib/define')
 
+require('./lib/types/position_parameters')
+require('./lib/types/strategy_state')
+require('./lib/types/strategy_trade')
+require('./lib/types/candle')
+require('./lib/types/trade')
+require('./lib/types/order')
+
 module.exports = {
   define,
 

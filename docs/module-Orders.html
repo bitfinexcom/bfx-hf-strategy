@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Orders - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Data.html">Data</a><ul class='methods'><li data-type='method'><a href="module-Data.html#.addCandleData">addCandleData</a></li><li data-type='method'><a href="module-Data.html#.addTradeData">addTradeData</a></li><li data-type='method'><a href="module-Data.html#.candleMarketDataKey">candleMarketDataKey</a></li><li data-type='method'><a href="module-Data.html#.getCandle">getCandle</a></li><li data-type='method'><a href="module-Data.html#.getCandles">getCandles</a></li><li data-type='method'><a href="module-Data.html#.getDefaultCandles">getDefaultCandles</a></li><li data-type='method'><a href="module-Data.html#.getDefaultSymbol">getDefaultSymbol</a></li><li data-type='method'><a href="module-Data.html#.getDefaultTF">getDefaultTF</a></li><li data-type='method'><a href="module-Data.html#.getDefaultTrades">getDefaultTrades</a></li><li data-type='method'><a href="module-Data.html#.getLastPrice">getLastPrice</a></li><li data-type='method'><a href="module-Data.html#.getNumCandles">getNumCandles</a></li><li data-type='method'><a href="module-Data.html#.getNumTrades">getNumTrades</a></li><li data-type='method'><a href="module-Data.html#.getPosition">getPosition</a></li><li data-type='method'><a href="module-Data.html#.getTrade">getTrade</a></li><li data-type='method'><a href="module-Data.html#.getTrades">getTrades</a></li><li data-type='method'><a href="module-Data.html#.isLong">isLong</a></li><li data-type='method'><a href="module-Data.html#.isShort">isShort</a></li><li data-type='method'><a href="module-Data.html#.positionPL">positionPL</a></li><li data-type='method'><a href="module-Data.html#.tradeMarketDataKey">tradeMarketDataKey</a></li><li data-type='method'><a href="module-Data.html#.updatePositionWithTrade">updatePositionWithTrade</a></li></ul></li><li><a href="module-Errors.html">Errors</a><ul class='methods'><li data-type='method'><a href="module-Errors.html#.throwsIfOrderClosesPosition">throwsIfOrderClosesPosition</a></li></ul></li><li><a href="module-Indicators.html">Indicators</a><ul class='methods'><li data-type='method'><a href="module-Indicators.html#.addIndicatorData">addIndicatorData</a></li><li data-type='method'><a href="module-Indicators.html#.findIndicator">findIndicator</a></li><li data-type='method'><a href="module-Indicators.html#.forEachIndicator">forEachIndicator</a></li><li data-type='method'><a href="module-Indicators.html#.indicators">indicators</a></li><li data-type='method'><a href="module-Indicators.html#.indicatorsExec">indicatorsExec</a></li><li data-type='method'><a href="module-Indicators.html#.indicatorsReady">indicatorsReady</a></li><li data-type='method'><a href="module-Indicators.html#.indicatorValues">indicatorValues</a></li><li data-type='method'><a href="module-Indicators.html#.resetIndicators">resetIndicators</a></li><li data-type='method'><a href="module-Indicators.html#.seedPeriodForIndicators">seedPeriodForIndicators</a></li><li data-type='method'><a href="module-Indicators.html#.updateIndicatorData">updateIndicatorData</a></li></ul></li><li><a href="module-Orders.html">Orders</a><ul class='methods'><li data-type='method'><a href="module-Orders.html#.module.exports">module.exports</a></li><li data-type='method'><a href="module-Orders.html#.simulateOrderFill">simulateOrderFill</a></li><li data-type='method'><a href="module-Orders.html#.submitOrder">submitOrder</a></li><li data-type='method'><a href="module-Orders.html#.submitTrade">submitTrade</a></li><li data-type='method'><a href="module-Orders.html#.tradeForOrder">tradeForOrder</a></li></ul></li><li><a href="module-Positions.html">Positions</a><ul class='methods'><li data-type='method'><a href="module-Positions.html#.closeOpenPositions">closeOpenPositions</a></li><li data-type='method'><a href="module-Positions.html#.closePosition">closePosition</a></li><li data-type='method'><a href="module-Positions.html#.closePositionLimit">closePositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.closePositionMarket">closePositionMarket</a></li><li data-type='method'><a href="module-Positions.html#.closePositionWithOrder">closePositionWithOrder</a></li><li data-type='method'><a href="module-Positions.html#.module.exports">module.exports</a></li><li data-type='method'><a href="module-Positions.html#.module.exports">module.exports</a></li><li data-type='method'><a href="module-Positions.html#.module.exports">module.exports</a></li><li data-type='method'><a href="module-Positions.html#.openLongPosition">openLongPosition</a></li><li data-type='method'><a href="module-Positions.html#.openLongPositionLimit">openLongPositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.openLongPositionMarket">openLongPositionMarket</a></li><li data-type='method'><a href="module-Positions.html#.openPosition">openPosition</a></li><li data-type='method'><a href="module-Positions.html#.openPositionLimit">openPositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.openPositionMarket">openPositionMarket</a></li><li data-type='method'><a href="module-Positions.html#.openPositionWithOrder">openPositionWithOrder</a></li><li data-type='method'><a href="module-Positions.html#.openShortPosition">openShortPosition</a></li><li data-type='method'><a href="module-Positions.html#.openShortPositionLimit">openShortPositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.openShortPositionMarket">openShortPositionMarket</a></li><li data-type='method'><a href="module-Positions.html#.updateLongPosition">updateLongPosition</a></li><li data-type='method'><a href="module-Positions.html#.updateLongPositionLimit">updateLongPositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.updateLongPositionMarket">updateLongPositionMarket</a></li><li data-type='method'><a href="module-Positions.html#.updatePosition">updatePosition</a></li><li data-type='method'><a href="module-Positions.html#.updatePositionLimit">updatePositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.updatePositionMarket">updatePositionMarket</a></li><li data-type='method'><a href="module-Positions.html#.updatePositionWithOrder">updatePositionWithOrder</a></li><li data-type='method'><a href="module-Positions.html#.updateShortPosition">updateShortPosition</a></li><li data-type='method'><a href="module-Positions.html#.updateShortPositionLimit">updateShortPositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.updateShortPositionMarket">updateShortPositionMarket</a></li></ul></li><li><a href="module-UpdateHandlers.html">UpdateHandlers</a><ul class='methods'><li data-type='method'><a href="module-UpdateHandlers.html#.onCandle">onCandle</a></li><li data-type='method'><a href="module-UpdateHandlers.html#.onCandleUpdate">onCandleUpdate</a></li><li data-type='method'><a href="module-UpdateHandlers.html#.onPriceUpdate">onPriceUpdate</a></li><li data-type='method'><a href="module-UpdateHandlers.html#.onSeedCandle">onSeedCandle</a></li><li data-type='method'><a href="module-UpdateHandlers.html#.onSeedCandleUpdate">onSeedCandleUpdate</a></li><li data-type='method'><a href="module-UpdateHandlers.html#.onSeedTrade">onSeedTrade</a></li><li data-type='method'><a href="module-UpdateHandlers.html#.onTrade">onTrade</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#defineStrategy">defineStrategy</a></li><li><a href="global.html#positionPL">positionPL</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Orders</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+                <div class="description usertext"><p>Order manipulation methods</p></div>
+            
+
+            
+                
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="orders_index.js.html">orders/index.js</a>, <a href="orders_index.js.html#line8">line 8</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".module.exports"><span class="type-signature">(private, static) </span>module.exports<span class="signature">(state, orderParams)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="orders_validate_order_params.js.html">orders/validate_order_params.js</a>, <a href="orders_validate_order_params.js.html#line21">line 21</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Ensures the provided parameters contain an amount, valid type, and valid
+symbol</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>state</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#StrategyState">StrategyState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>strategy state</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>orderParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">OrderParameters</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>order parameters</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>throws if given an invalid amount, order type or symbol</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".simulateOrderFill"><span class="type-signature">(private, static) </span>simulateOrderFill<span class="signature">(orderParams, fillAmount<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#Order">Order</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="orders_simulate_order_fill.js.html">orders/simulate_order_fill.js</a>, <a href="orders_simulate_order_fill.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Simulates a fill for backtests, replaces submitOrder()</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>orderParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">OrderParameters</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>order parameters</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>fillAmount</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>defaults to entire order</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>Fails if the fill amount is larger than the order size</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>filledOrder</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="global.html#Order">Order</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".submitOrder"><span class="type-signature">(async, private, static) </span>submitOrder<span class="signature">(strategyState, order)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="orders_submit_order.js.html">orders/submit_order.js</a>, <a href="orders_submit_order.js.html#line20">line 20</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Submit an order using either a Bitfinex array-format order, order model
+instance, or a raw order parameters object.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>strategyState</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#StrategyState">StrategyState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>strategy state</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>order</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+|
+
+<span class="param-type">Array</span>
+|
+
+<span class="param-type"><a href="global.html#Order">Order</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>order to generate parameters or order
+parameters themselves</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>p - resolves to full Order model</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".submitTrade"><span class="type-signature">(async, private, static) </span>submitTrade<span class="signature">(state, orderParams)</span><span class="type-signature"> &rarr; {object}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="orders_submit_trade.js.html">orders/submit_trade.js</a>, <a href="orders_submit_trade.js.html#line18">line 18</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Creates &amp; submits the order, and returns the generated DB trade</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>state</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#StrategyState">StrategyState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>strategy state</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>orderParams</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+|
+
+<span class="param-type">Array</span>
+|
+
+<span class="param-type"><a href="global.html#Order">Order</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>order to generate parameters or
+order parameters themselves</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>res - map of order and trade objects</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".tradeForOrder"><span class="type-signature">(private, static) </span>tradeForOrder<span class="signature">(state, order, label<span class="signature-attributes">opt</span>, tag<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {<a href="global.html#StrategyTrade">StrategyTrade</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="orders_trade_for_order.js.html">orders/trade_for_order.js</a>, <a href="orders_trade_for_order.js.html#line20">line 20</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Returns a strategy trade object for the provided bfx order model</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>state</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#StrategyState">StrategyState</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>strategy state</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>order</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Order">Order</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>order properties as on node API model</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>label</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>descriptive label for the trade</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tag</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>tag indicating trade reason/metadata</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>Fails if the order is not fully filled</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>trade</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="global.html#StrategyTrade">StrategyTrade</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Fri Mar 13 2020 23:38:45 GMT+0700 (Indochina Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+
+</body>
+</html>

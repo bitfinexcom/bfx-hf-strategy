@@ -1,0 +1,4058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Data - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Data.html">Data</a><ul class='methods'><li data-type='method'><a href="module-Data.html#.addCandleData">addCandleData</a></li><li data-type='method'><a href="module-Data.html#.addTradeData">addTradeData</a></li><li data-type='method'><a href="module-Data.html#.candleMarketDataKey">candleMarketDataKey</a></li><li data-type='method'><a href="module-Data.html#.getCandle">getCandle</a></li><li data-type='method'><a href="module-Data.html#.getCandles">getCandles</a></li><li data-type='method'><a href="module-Data.html#.getDefaultCandles">getDefaultCandles</a></li><li data-type='method'><a href="module-Data.html#.getDefaultSymbol">getDefaultSymbol</a></li><li data-type='method'><a href="module-Data.html#.getDefaultTF">getDefaultTF</a></li><li data-type='method'><a href="module-Data.html#.getDefaultTrades">getDefaultTrades</a></li><li data-type='method'><a href="module-Data.html#.getLastPrice">getLastPrice</a></li><li data-type='method'><a href="module-Data.html#.getNumCandles">getNumCandles</a></li><li data-type='method'><a href="module-Data.html#.getNumTrades">getNumTrades</a></li><li data-type='method'><a href="module-Data.html#.getPosition">getPosition</a></li><li data-type='method'><a href="module-Data.html#.getTrade">getTrade</a></li><li data-type='method'><a href="module-Data.html#.getTrades">getTrades</a></li><li data-type='method'><a href="module-Data.html#.isLong">isLong</a></li><li data-type='method'><a href="module-Data.html#.isShort">isShort</a></li><li data-type='method'><a href="module-Data.html#.positionPL">positionPL</a></li><li data-type='method'><a href="module-Data.html#.tradeMarketDataKey">tradeMarketDataKey</a></li><li data-type='method'><a href="module-Data.html#.updatePositionWithTrade">updatePositionWithTrade</a></li></ul></li><li><a href="module-Errors.html">Errors</a><ul class='methods'><li data-type='method'><a href="module-Errors.html#.throwsIfOrderClosesPosition">throwsIfOrderClosesPosition</a></li></ul></li><li><a href="module-Indicators.html">Indicators</a><ul class='methods'><li data-type='method'><a href="module-Indicators.html#.addIndicatorData">addIndicatorData</a></li><li data-type='method'><a href="module-Indicators.html#.findIndicator">findIndicator</a></li><li data-type='method'><a href="module-Indicators.html#.forEachIndicator">forEachIndicator</a></li><li data-type='method'><a href="module-Indicators.html#.indicators">indicators</a></li><li data-type='method'><a href="module-Indicators.html#.indicatorsExec">indicatorsExec</a></li><li data-type='method'><a href="module-Indicators.html#.indicatorsReady">indicatorsReady</a></li><li data-type='method'><a href="module-Indicators.html#.indicatorValues">indicatorValues</a></li><li data-type='method'><a href="module-Indicators.html#.resetIndicators">resetIndicators</a></li><li data-type='method'><a href="module-Indicators.html#.seedPeriodForIndicators">seedPeriodForIndicators</a></li><li data-type='method'><a href="module-Indicators.html#.updateIndicatorData">updateIndicatorData</a></li></ul></li><li><a href="module-Orders.html">Orders</a><ul class='methods'><li data-type='method'><a href="module-Orders.html#.module.exports">module.exports</a></li><li data-type='method'><a href="module-Orders.html#.simulateOrderFill">simulateOrderFill</a></li><li data-type='method'><a href="module-Orders.html#.submitOrder">submitOrder</a></li><li data-type='method'><a href="module-Orders.html#.submitTrade">submitTrade</a></li><li data-type='method'><a href="module-Orders.html#.tradeForOrder">tradeForOrder</a></li></ul></li><li><a href="module-Positions.html">Positions</a><ul class='methods'><li data-type='method'><a href="module-Positions.html#.closeOpenPositions">closeOpenPositions</a></li><li data-type='method'><a href="module-Positions.html#.closePosition">closePosition</a></li><li data-type='method'><a href="module-Positions.html#.closePositionLimit">closePositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.closePositionMarket">closePositionMarket</a></li><li data-type='method'><a href="module-Positions.html#.closePositionWithOrder">closePositionWithOrder</a></li><li data-type='method'><a href="module-Positions.html#.module.exports">module.exports</a></li><li data-type='method'><a href="module-Positions.html#.module.exports">module.exports</a></li><li data-type='method'><a href="module-Positions.html#.module.exports">module.exports</a></li><li data-type='method'><a href="module-Positions.html#.openLongPosition">openLongPosition</a></li><li data-type='method'><a href="module-Positions.html#.openLongPositionLimit">openLongPositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.openLongPositionMarket">openLongPositionMarket</a></li><li data-type='method'><a href="module-Positions.html#.openPosition">openPosition</a></li><li data-type='method'><a href="module-Positions.html#.openPositionLimit">openPositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.openPositionMarket">openPositionMarket</a></li><li data-type='method'><a href="module-Positions.html#.openPositionWithOrder">openPositionWithOrder</a></li><li data-type='method'><a href="module-Positions.html#.openShortPosition">openShortPosition</a></li><li data-type='method'><a href="module-Positions.html#.openShortPositionLimit">openShortPositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.openShortPositionMarket">openShortPositionMarket</a></li><li data-type='method'><a href="module-Positions.html#.updateLongPosition">updateLongPosition</a></li><li data-type='method'><a href="module-Positions.html#.updateLongPositionLimit">updateLongPositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.updateLongPositionMarket">updateLongPositionMarket</a></li><li data-type='method'><a href="module-Positions.html#.updatePosition">updatePosition</a></li><li data-type='method'><a href="module-Positions.html#.updatePositionLimit">updatePositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.updatePositionMarket">updatePositionMarket</a></li><li data-type='method'><a href="module-Positions.html#.updatePositionWithOrder">updatePositionWithOrder</a></li><li data-type='method'><a href="module-Positions.html#.updateShortPosition">updateShortPosition</a></li><li data-type='method'><a href="module-Positions.html#.updateShortPositionLimit">updateShortPositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.updateShortPositionMarket">updateShortPositionMarket</a></li></ul></li><li><a href="module-UpdateHandlers.html">UpdateHandlers</a><ul class='methods'><li data-type='method'><a href="module-UpdateHandlers.html#.onCandle">onCandle</a></li><li data-type='method'><a href="module-UpdateHandlers.html#.onCandleUpdate">onCandleUpdate</a></li><li data-type='method'><a href="module-UpdateHandlers.html#.onPriceUpdate">onPriceUpdate</a></li><li data-type='method'><a href="module-UpdateHandlers.html#.onSeedCandle">onSeedCandle</a></li><li data-type='method'><a href="module-UpdateHandlers.html#.onSeedCandleUpdate">onSeedCandleUpdate</a></li><li data-type='method'><a href="module-UpdateHandlers.html#.onSeedTrade">onSeedTrade</a></li><li data-type='method'><a href="module-UpdateHandlers.html#.onTrade">onTrade</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#defineStrategy">defineStrategy</a></li><li><a href="global.html#positionPL">positionPL</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Data</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+                <div class="description usertext"><p>Strategy data manipulation methods</p></div>
+            
+
+            
+                
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_index.js.html">data/index.js</a>, <a href="data_index.js.html#line24">line 24</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".addCandleData"><span class="type-signature">(private, static) </span>addCandleData<span class="signature">(state, candle)</span><span class="type-signature"> &rarr; {<a href="global.html#StrategyState">StrategyState</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_add_candle_data.js.html">data/add_candle_data.js</a>, <a href="data_add_candle_data.js.html#line17">line 17</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Updates the candle dataset in-place by pushing a new candle</p>
+<p>NOTE: market data is sorted in reverse order, oldest first</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>state</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#StrategyState">StrategyState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>strategy state</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>candle</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Candle">Candle</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>incoming candle</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>state - same state reference</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="global.html#StrategyState">StrategyState</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".addTradeData"><span class="type-signature">(private, static) </span>addTradeData<span class="signature">(state, trade)</span><span class="type-signature"> &rarr; {<a href="global.html#StrategyState">StrategyState</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_add_trade_data.js.html">data/add_trade_data.js</a>, <a href="data_add_trade_data.js.html#line17">line 17</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Updates the trade dataset in-place by pushing a new trade.</p>
+<p>NOTE: market data is sorted in reverse order, oldest first</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>state</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#StrategyState">StrategyState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>strategy state</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>trade</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Trade">Trade</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>incoming trade</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>state - same state reference</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="global.html#StrategyState">StrategyState</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".candleMarketDataKey"><span class="type-signature">(private, static) </span>candleMarketDataKey<span class="signature">(candle)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_candle_market_data_key.js.html">data/candle_market_data_key.js</a>, <a href="data_candle_market_data_key.js.html#line12">line 12</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Generates key for candle market data on strategy state</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>candle</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Candle">Candle</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>candle to generate key for</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>key</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getCandle"><span class="type-signature">(static) </span>getCandle<span class="signature">(state, n, symbol, tf)</span><span class="type-signature"> &rarr; {<a href="global.html#Candle">Candle</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_get_candle.js.html">data/get_candle.js</a>, <a href="data_get_candle.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Reverses candle sort, n = 0 for most recent candle</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>state</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#StrategyState">StrategyState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>strategy state</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>n</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>0</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>index</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>symbol</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>symbol</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tf</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>timeframe</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>candle</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="global.html#Candle">Candle</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getCandles"><span class="type-signature">(static) </span>getCandles<span class="signature">(state, forSymbol, forTF)</span><span class="type-signature"> &rarr; {Array.&lt;<a href="global.html#Candle">Candle</a>>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_get_candles.js.html">data/get_candles.js</a>, <a href="data_get_candles.js.html#line18">line 18</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Returns the candle dataset for the specified symbol/timeframe pair</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>state</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#StrategyState">StrategyState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>strategy state</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>forSymbol</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>defaults to strategy symbol</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>forTF</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>defaults to strategy tf</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>fails if either symbol or timeframe are not specified</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>candles - sorted oldest first</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;<a href="global.html#Candle">Candle</a>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getDefaultCandles"><span class="type-signature">(static) </span>getDefaultCandles<span class="signature">(state)</span><span class="type-signature"> &rarr; {Array.&lt;<a href="global.html#Candle">Candle</a>>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_get_default_candles.js.html">data/get_default_candles.js</a>, <a href="data_get_default_candles.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Returns the candle dataset for the default symbol/tf pair</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>state</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#StrategyState">StrategyState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>strategy state</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>fails if either symbol or timeframe are not specified</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>candles</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;<a href="global.html#Candle">Candle</a>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getDefaultSymbol"><span class="type-signature">(static) </span>getDefaultSymbol<span class="signature">(strategyState)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_get_default_symbol.js.html">data/get_default_symbol.js</a>, <a href="data_get_default_symbol.js.html#line12">line 12</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Returns the default symbol for the strategy; a strategy can have either a
+set of multiple symbols, a single default 'symbol' defined, or both.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>strategyState</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#StrategyState">StrategyState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>strategy state</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>defaultSymbol</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getDefaultTF"><span class="type-signature">(static) </span>getDefaultTF<span class="signature">(strategyState)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_get_default_tf.js.html">data/get_default_tf.js</a>, <a href="data_get_default_tf.js.html#line12">line 12</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Returns the default time frame for the strategy; a strategy can have either a
+set of multiple time frames, a single default time frame, or both.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>strategyState</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#StrategyState">StrategyState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>strategy state</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>defaultTF</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getDefaultTrades"><span class="type-signature">(static) </span>getDefaultTrades<span class="signature">(state)</span><span class="type-signature"> &rarr; {Array.&lt;object>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_get_default_trades.js.html">data/get_default_trades.js</a>, <a href="data_get_default_trades.js.html#line14">line 14</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Returns the trade dataset for the default symbol</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>state</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#StrategyState">StrategyState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>strategy state</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>trades</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;object></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getLastPrice"><span class="type-signature">(static) </span>getLastPrice<span class="signature">(state, forSymbol<span class="signature-attributes">opt</span>, forTF<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {object}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_get_last_price.js.html">data/get_last_price.js</a>, <a href="data_get_last_price.js.html#line19">line 19</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Get the last price &amp; timestamp received for the specified symbol &amp; tf.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>state</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#StrategyState">StrategyState</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>strategy state</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>forSymbol</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>defaults to default strategy symbol</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>forTF</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>defaults to default strategy tf</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>pp - price point, { mts, price } (null if unavailable)</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getNumCandles"><span class="type-signature">(static) </span>getNumCandles<span class="signature">(state, symbol, tf)</span><span class="type-signature"> &rarr; {number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_get_num_candles.js.html">data/get_num_candles.js</a>, <a href="data_get_num_candles.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Returns the number of received candles for the specified symbol/timeframe
+pair</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>state</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#StrategyState">StrategyState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>strategy state</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>symbol</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>defaults to strategy symbol</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tf</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>defaults to strategy time frame</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>numCandles</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getNumTrades"><span class="type-signature">(static) </span>getNumTrades<span class="signature">(state, symbol)</span><span class="type-signature"> &rarr; {number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_get_num_trades.js.html">data/get_num_trades.js</a>, <a href="data_get_num_trades.js.html#line15">line 15</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Returns the number of received trades for the specified symbol/timeframe
+pair.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>state</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#StrategyState">StrategyState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>strategy state</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>symbol</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>defaults to strategy symbol</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>numTrades</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getPosition"><span class="type-signature">(static) </span>getPosition<span class="signature">(state, forSymbol<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Position}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_get_position.js.html">data/get_position.js</a>, <a href="data_get_position.js.html#line15">line 15</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Returns the position for the specified symbol</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>state</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#StrategyState">StrategyState</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>strategy state</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>forSymbol</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>defaults to default strategy symbol</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>position - may be null</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Position</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getTrade"><span class="type-signature">(static) </span>getTrade<span class="signature">(state, n, symbol)</span><span class="type-signature"> &rarr; {<a href="global.html#Trade">Trade</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_get_trade.js.html">data/get_trade.js</a>, <a href="data_get_trade.js.html#line16">line 16</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Returns the trade for the specified market at the specified index. Reverses
+trade sort, set n = 0 for most recent trade.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>state</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#StrategyState">StrategyState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>strategy state</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>n</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>0</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>index</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>symbol</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>trade</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="global.html#Trade">Trade</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".getTrades"><span class="type-signature">(static) </span>getTrades<span class="signature">(state, symbol<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {Array.&lt;<a href="global.html#Trade">Trade</a>>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_get_trades.js.html">data/get_trades.js</a>, <a href="data_get_trades.js.html#line14">line 14</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Returns all known trades for the specified symbol</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>state</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#StrategyState">StrategyState</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>strategy state</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>symbol</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    <code>null</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>defaults to strategy symbol</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>trades - sorted oldest first</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;<a href="global.html#Trade">Trade</a>></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isLong"><span class="type-signature">(static) </span>isLong<span class="signature">(state, forSymbol<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_is_long.js.html">data/is_long.js</a>, <a href="data_is_long.js.html#line14">line 14</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Queries if a long position is open for the specified symbol</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>state</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#StrategyState">StrategyState</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>strategy state</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>forSymbol</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>defaults to strategy symbol</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>isLong</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".isShort"><span class="type-signature">(static) </span>isShort<span class="signature">(state, forSymbol<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_is_short.js.html">data/is_short.js</a>, <a href="data_is_short.js.html#line14">line 14</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Queries if a short position is open for the specified symbol</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>state</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#StrategyState">StrategyState</a></span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>strategy state</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>forSymbol</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>defaults to strategy symbol</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>isShort</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".positionPL"><span class="type-signature">(static) </span>positionPL<span class="signature">(position, closePrice<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_position_pl.js.html">data/position_pl.js</a>, <a href="data_position_pl.js.html#line15">line 15</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Returns the P/L figure for the specified position, taking into account all
+trades &amp; a close with the provided price (optional)</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>position</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">object</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>position</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>closePrice</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>used if position not already closed</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>pl</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".tradeMarketDataKey"><span class="type-signature">(private, static) </span>tradeMarketDataKey<span class="signature">(trade)</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_trade_market_data_key.js.html">data/trade_market_data_key.js</a>, <a href="data_trade_market_data_key.js.html#line12">line 12</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Generates key for trade market data on strategy state</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>trade</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Trade">Trade</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>trade to generate key for</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>key</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".updatePositionWithTrade"><span class="type-signature">(private, static) </span>updatePositionWithTrade<span class="signature">(position, trade)</span><span class="type-signature"> &rarr; {Position}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="data_update_position_with_trade.js.html">data/update_position_with_trade.js</a>, <a href="data_update_position_with_trade.js.html#line13">line 13</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Adds the trade to the position state</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>position</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Position</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>position</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>trade</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Trade">Trade</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>trade</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>updatedPosition</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Position</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Fri Mar 13 2020 23:38:45 GMT+0700 (Indochina Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+
+</body>
+</html>

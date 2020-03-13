@@ -1,3 +1,9 @@
+# 2.0.0
+- meta: added JSDoc-generated HTML documentation
+- meta: improved/normalized documentation throughout entire repo
+- feature: added plugin system
+- refactor: extracted stop/target logic into seperate plugins
+
 # 1.0.4
 - meta: bump bitfinex-api-node to v4
 

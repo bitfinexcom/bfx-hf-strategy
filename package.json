@@ -1,6 +1,6 @@
 {
   "name": "bfx-hf-strategy",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "HF strategy module",
   "main": "./index.js",
   "engines": {
@@ -24,7 +24,7 @@
     "build": "babel -q ./index.js -d ./dist && babel -q ./lib -d ./dist/lib && copy package.json dist",
     "postinstall": "npm run build",
     "api_docs": "node_modules/jsdoc-to-markdown/bin/cli.js lib/define.js lib/data/*.js lib/indicators/*.js lib/position/*.js lib/updates/*.js > docs/api.md",
-    "docs": "npm run api_docs"
+    "docs": "rm -rf docs && node_modules/.bin/jsdoc --configure .jsdoc.json --verbose"
   },
   "repository": {
     "type": "git",
@@ -51,6 +51,7 @@
     "bfx-api-node-util": "^1.0.2",
     "bfx-hf-indicators": "^2.0.0",
     "bfx-hf-util": "^1.0.1",
+    "bluebird": "^3.7.2",
     "copy": "^0.3.1",
     "debug": "^4.1.1",
     "lodash": "^4.17.10",
