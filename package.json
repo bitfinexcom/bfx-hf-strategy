@@ -49,7 +49,9 @@
     "bfx-hf-indicators": "^2.0.0",
     "bfx-hf-util": "^1.0.1",
     "copy": "^0.3.1",
-    "lodash": "^4.17.10"
+    "debug": "^4.1.1",
+    "lodash": "^4.17.10",
+    "p-iteration": "^1.1.8"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.2",
