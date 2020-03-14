@@ -25,8 +25,6 @@ module.exports = ({
     const l = iv.emaL
     const s = iv.emaS
 
-    // TODO: refactor Market methods to pull price + mts from last update
-
     await HFS.condition.indicatorsCrossed(state, 's', 'l')
 
     if (!HFS.inAPosition()) {
