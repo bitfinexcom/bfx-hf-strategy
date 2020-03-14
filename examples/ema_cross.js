@@ -19,6 +19,12 @@ const strategy = HFS.define({
   symbol: SYMBOL,
   tf: TIME_FRAME,
 
+  // Assumes LEO balance > 1 and trading w/ affiliate code
+  takerFee: (0.0002 * 0.95) * 0.85,
+  makerFee: (0.0001 * 0.95) * 0.85,
+
+  simulateLiveCandleEnabled: false,
+
   indicators: {
     l: new EMA([100]),
     s: new EMA([20])

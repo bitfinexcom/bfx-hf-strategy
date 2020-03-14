@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Backtest - Documentation</title>
-    
-    
+
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
-    <script src="scripts/nav.js" defer></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
 </head>
 <body>
 
@@ -25,11 +23,8 @@
 
 <label for="nav-trigger" class="overlay"></label>
 
-<nav >
-    
-    <input type="text" id="nav-search" placeholder="Search" />
-    
-    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module-Errors.ErrorInterruptExec.html">ErrorInterruptExec</a></li></ul><h3>Modules</h3><ul><li><a href="module-Backtest.html">Backtest</a><ul class='methods'><li data-type='method'><a href="module-Backtest.html#.debugResults">debugResults</a></li><li data-type='method'><a href="module-Backtest.html#.execOffline">execOffline</a></li><li data-type='method'><a href="module-Backtest.html#.execOnline">execOnline</a></li></ul></li><li><a href="module-Data.html">Data</a><ul class='methods'><li data-type='method'><a href="module-Data.html#.getCandle">getCandle</a></li><li data-type='method'><a href="module-Data.html#.getCandles">getCandles</a></li><li data-type='method'><a href="module-Data.html#.getDefaultCandles">getDefaultCandles</a></li><li data-type='method'><a href="module-Data.html#.getDefaultSymbol">getDefaultSymbol</a></li><li data-type='method'><a href="module-Data.html#.getDefaultTF">getDefaultTF</a></li><li data-type='method'><a href="module-Data.html#.getDefaultTrades">getDefaultTrades</a></li><li data-type='method'><a href="module-Data.html#.getIndicator">getIndicator</a></li><li data-type='method'><a href="module-Data.html#.getIndicators">getIndicators</a></li><li data-type='method'><a href="module-Data.html#.getLastMTS">getLastMTS</a></li><li data-type='method'><a href="module-Data.html#.getLastPrice">getLastPrice</a></li><li data-type='method'><a href="module-Data.html#.getNumCandles">getNumCandles</a></li><li data-type='method'><a href="module-Data.html#.getNumTrades">getNumTrades</a></li><li data-type='method'><a href="module-Data.html#.getPosition">getPosition</a></li><li data-type='method'><a href="module-Data.html#.getTrade">getTrade</a></li><li data-type='method'><a href="module-Data.html#.getTrades">getTrades</a></li><li data-type='method'><a href="module-Data.html#.isLong">isLong</a></li><li data-type='method'><a href="module-Data.html#.isShort">isShort</a></li><li data-type='method'><a href="module-Data.html#.positionPL">positionPL</a></li></ul></li><li><a href="module-Errors.html">Errors</a></li><li><a href="module-Helpers.html">Helpers</a><ul class='methods'><li data-type='method'><a href="module-Helpers.html#.h.condition.inAPosition">h.condition.inAPosition</a></li><li data-type='method'><a href="module-Helpers.html#.h.condition.indicatorsCrossed">h.condition.indicatorsCrossed</a></li><li data-type='method'><a href="module-Helpers.html#.h.getLastPrice">h.getLastPrice</a></li><li data-type='method'><a href="module-Helpers.html#.h.getState">h.getState</a></li><li data-type='method'><a href="module-Helpers.html#.h.inAPosition">h.inAPosition</a></li><li data-type='method'><a href="module-Helpers.html#.h.indicatorValues">h.indicatorValues</a></li></ul></li><li><a href="module-Indicators.html">Indicators</a></li><li><a href="module-Orders.html">Orders</a></li><li><a href="module-Positions.html">Positions</a><ul class='methods'><li data-type='method'><a href="module-Positions.html#.closeOpenPositions">closeOpenPositions</a></li><li data-type='method'><a href="module-Positions.html#.closePosition">closePosition</a></li><li data-type='method'><a href="module-Positions.html#.closePositionLimit">closePositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.closePositionMarket">closePositionMarket</a></li><li data-type='method'><a href="module-Positions.html#.closePositionWithOrder">closePositionWithOrder</a></li><li data-type='method'><a href="module-Positions.html#.module.exports">module.exports</a></li><li data-type='method'><a href="module-Positions.html#.module.exports">module.exports</a></li><li data-type='method'><a href="module-Positions.html#.openLongPosition">openLongPosition</a></li><li data-type='method'><a href="module-Positions.html#.openLongPositionLimit">openLongPositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.openLongPositionMarket">openLongPositionMarket</a></li><li data-type='method'><a href="module-Positions.html#.openPosition">openPosition</a></li><li data-type='method'><a href="module-Positions.html#.openPositionLimit">openPositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.openPositionMarket">openPositionMarket</a></li><li data-type='method'><a href="module-Positions.html#.openPositionWithOrder">openPositionWithOrder</a></li><li data-type='method'><a href="module-Positions.html#.openShortPosition">openShortPosition</a></li><li data-type='method'><a href="module-Positions.html#.openShortPositionLimit">openShortPositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.openShortPositionMarket">openShortPositionMarket</a></li><li data-type='method'><a href="module-Positions.html#.updateLongPosition">updateLongPosition</a></li><li data-type='method'><a href="module-Positions.html#.updateLongPositionLimit">updateLongPositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.updateLongPositionMarket">updateLongPositionMarket</a></li><li data-type='method'><a href="module-Positions.html#.updatePosition">updatePosition</a></li><li data-type='method'><a href="module-Positions.html#.updatePositionLimit">updatePositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.updatePositionMarket">updatePositionMarket</a></li><li data-type='method'><a href="module-Positions.html#.updatePositionWithOrder">updatePositionWithOrder</a></li><li data-type='method'><a href="module-Positions.html#.updateShortPosition">updateShortPosition</a></li><li data-type='method'><a href="module-Positions.html#.updateShortPositionLimit">updateShortPositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.updateShortPositionMarket">updateShortPositionMarket</a></li></ul></li><li><a href="module-UpdateHandlers.html">UpdateHandlers</a></li><li><a href="module-Utility.html">Utility</a><ul class='methods'><li data-type='method'><a href="module-Utility.html#.execInterruptableHandler">execInterruptableHandler</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#defineStrategy">defineStrategy</a></li><li><a href="global.html#positionPL">positionPL</a></li><li><a href="global.html#safeThrow">safeThrow</a></li></ul>
+<nav>
+    <li class="nav-link nav-home-link"><a href="index.html">Home</a></li><li class="nav-heading">Tutorials</li><li class="nav-item"><a href="tutorial-Architectural Overview.html">Architectural Overview</a></li><li class="nav-item"><a href="tutorial-Backtesting Offline.html">Backtesting Offline</a></li><li class="nav-item"><a href="tutorial-Backtesting Online.html">Backtesting Online</a></li><li class="nav-item"><a href="tutorial-Live Execution.html">Live Execution</a></li><li class="nav-item"><a href="tutorial-Order Creation.html">Order Creation</a></li><li class="nav-item"><a href="tutorial-Strategy Design.html">Strategy Design</a></li><li class="nav-item"><a href="tutorial-Using Indicators.html">Using Indicators</a></li><li class="nav-heading">Modules</li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-Backtest.html">Backtest</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Backtest.html#.debugResults">debugResults</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Backtest.html#.execOffline">execOffline</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Backtest.html#.execOnline">execOnline</a></span></li><li class="nav-heading"><span class="nav-item-type type-module">M</span><span class="nav-item-name"><a href="module-Helpers.html">Helpers</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.closeOpenPositions">h.closeOpenPositions</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.closePosition">h.closePosition</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.closePositionLimit">h.closePositionLimit</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.closePositionMarket">h.closePositionMarket</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.closePositionWithOrder">h.closePositionWithOrder</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.condition">h.condition</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.condition.inAPosition">h.condition.inAPosition</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.condition.indicatorCrossed">h.condition.indicatorCrossed</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.condition.indicatorsCrossed">h.condition.indicatorsCrossed</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.enforceMinTradeInterval">h.enforceMinTradeInterval</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.getLastPrice">h.getLastPrice</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.getState">h.getState</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.inALongPosition">h.inALongPosition</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.inAPosition">h.inAPosition</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.inAShortPosition">h.inAShortPosition</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.indicatorValues">h.indicatorValues</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.minTradeIntervalMet">h.minTradeIntervalMet</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.openLongPosition">h.openLongPosition</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.openLongPositionLimit">h.openLongPositionLimit</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.openLongPositionMarket">h.openLongPositionMarket</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.openPosition">h.openPosition</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.openPositionLimit">h.openPositionLimit</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.openPositionMarket">h.openPositionMarket</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.openPositionWithOrder">h.openPositionWithOrder</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.openShortPosition">h.openShortPosition</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.openShortPositionLimit">h.openShortPositionLimit</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.openShortPositionMarket">h.openShortPositionMarket</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.updateLongPosition">h.updateLongPosition</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.updateLongPositionLimit">h.updateLongPositionLimit</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.updateLongPositionMarket">h.updateLongPositionMarket</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.updatePosition">h.updatePosition</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.updatePositionLimit">h.updatePositionLimit</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.updatePositionMarket">h.updatePositionMarket</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.updatePositionWithOrder">h.updatePositionWithOrder</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.updateShortPosition">h.updateShortPosition</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.updateShortPositionLimit">h.updateShortPositionLimit</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.updateShortPositionMarket">h.updateShortPositionMarket</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.withNoPosition">h.withNoPosition</a></span></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="module-Helpers.html#.h.withPosition">h.withPosition</a></span></li><li class="nav-heading"><a href="global.html">Globals</a></li><li class="nav-item"><span class="nav-item-type type-function">F</span><span class="nav-item-name"><a href="global.html#defineStrategy">defineStrategy</a></span></li>
 </nav>
 
 <div id="main">
@@ -53,22 +48,49 @@
 </header>
 
 <article>
+    <div class="container-overview">
     
-        <div class="container-overview">
         
-            
-                <div class="description usertext"><p>Functions for executing backtests with <code>bfx-hf-strategy</code> trading strategies,
+            <div class="description"><p>Functions for executing backtests with <code>bfx-hf-strategy</code> trading strategies,
 supporting both offline exec from a static dataset and online exec using a
 <code>bfx-hf-data-server</code> instance for loading live data as-needed.</p></div>
-            
+        
 
+        
             
-                
+<div class="section-method">
+
+
+
 
 
 
 
 <dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -82,30 +104,6 @@ supporting both offline exec from a static dataset and online exec using a
     
 
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
 </dl>
 
 
@@ -130,26 +128,15 @@ supporting both offline exec from a static dataset and online exec using a
 
 
 
-
-
-
-
-
-
-
-
-
-            
+</div>
         
-        </div>
     
+    </div>
 
     
 
     
 
-    
-    
     
 
      
@@ -163,6 +150,7 @@ supporting both offline exec from a static dataset and online exec using a
 
         
             
+<div class="section-method">
 
     
 
@@ -172,13 +160,44 @@ supporting both offline exec from a static dataset and online exec using a
 
 
 
+<div class="description">
+    <p>Logs backtest results to the console</p>
+</div>
+
+
+
+
 
 <dl class="details">
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="node_modules_bfx-hf-backtest_lib_util_debug_results.js.html">node_modules/bfx-hf-backtest/lib/util/debug_results.js</a>, <a href="node_modules_bfx-hf-backtest_lib_util_debug_results.js.html#line19">line 19</a>
+        <a href="node_modules_bfx-hf-backtest_lib_util_debug_results.js.html">node_modules/bfx-hf-backtest/lib/util/debug_results.js</a>, <a href="node_modules_bfx-hf-backtest_lib_util_debug_results.js.html#line23">line 23</a>
     </li></ul></dd>
     
 
@@ -187,41 +206,7 @@ supporting both offline exec from a static dataset and online exec using a
     
 
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
 </dl>
-
-
-
-
-
-<div class="description usertext">
-    <p>Logs backtest results to the console</p>
-</div>
-
-
 
 
 
@@ -264,7 +249,7 @@ supporting both offline exec from a static dataset and online exec using a
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#BacktestState">BacktestState</a></span>
+<span class="param-type"><code><a href="global.html#BacktestState">BacktestState</a></code></span>
 
 
             
@@ -278,7 +263,10 @@ supporting both offline exec from a static dataset and online exec using a
                 </td>
             
 
-            <td class="description last"><p>backtest state</p></td>
+            <td class="description last">
+                <p>backtest state</p>
+                
+            </td>
         </tr>
 
     
@@ -291,7 +279,7 @@ supporting both offline exec from a static dataset and online exec using a
             <td class="type">
             
                 
-<span class="param-type">boolean</span>
+<span class="param-type"><code>boolean</code></span>
 
 
             
@@ -302,12 +290,15 @@ supporting both offline exec from a static dataset and online exec using a
             
                 <td class="default">
                 
-                    <code>false</code>
+                    false
                 
                 </td>
             
 
-            <td class="description last"><p>if true, only a summary of results is displayed</p></td>
+            <td class="description last">
+                <p>if true, only a summary of results is displayed</p>
+                
+            </td>
         </tr>
 
     
@@ -329,11 +320,10 @@ supporting both offline exec from a static dataset and online exec using a
 
 
 
-
-
-
+</div>
         
             
+<div class="section-method">
 
     
 
@@ -343,8 +333,39 @@ supporting both offline exec from a static dataset and online exec using a
 
 
 
+<div class="description">
+    <p>Run an offline backtest with user-supplied data</p>
+</div>
+
+
+
+
 
 <dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -358,70 +379,12 @@ supporting both offline exec from a static dataset and online exec using a
     
 
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
 </dl>
 
 
 
 
 
-<div class="description usertext">
-    <p>Run an offline backtest with user-supplied data</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>const HFS = require('bfx-hf-strategy')
-const HFBT = require('bfx-hf-backtest')
-const Strategy = ... // strategy instance
-const candles = [...] // candle dataset
-
-const candleKey = HFS.candleMarketDataKey({
-  symbol: SYMBOLS.BTC_USD,
-  tf: TIME_FRAMES.ONE_HOUR
-})
-
-HFBT.execOffline(strat, {
-  trades: {},
-  candles: {
-    [candleKey]: candles,
-  }
-}).then((btState) => {
-  const { trades = [] } = btState
-
-  // analyze backtest trades...
-})</code></pre>
 
 
 
@@ -457,7 +420,7 @@ HFBT.execOffline(strat, {
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#Strategy">Strategy</a></span>
+<span class="param-type"><code><a href="global.html#Strategy">Strategy</a></code></span>
 
 
             
@@ -467,7 +430,10 @@ HFBT.execOffline(strat, {
 
             
 
-            <td class="description last"><p>strategy to backtest</p></td>
+            <td class="description last">
+                <p>strategy to backtest</p>
+                
+            </td>
         </tr>
 
     
@@ -480,7 +446,7 @@ HFBT.execOffline(strat, {
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#BacktestParameters">BacktestParameters</a></span>
+<span class="param-type"><code><a href="global.html#BacktestParameters">BacktestParameters</a></code></span>
 
 
             
@@ -490,7 +456,10 @@ HFBT.execOffline(strat, {
 
             
 
-            <td class="description last"><p>backtest parameters</p></td>
+            <td class="description last">
+                <p>backtest parameters</p>
+                
+            </td>
         </tr>
 
     
@@ -510,35 +479,63 @@ HFBT.execOffline(strat, {
 
 
 
-
-
+<div class="section-returns">
 <h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>p</p>
-</div>
-
-
 
 <dl class="param-type">
     <dt>
-        Type
+        Type:
     </dt>
     <dd>
         
-<span class="param-type">Promise</span>
+<span class="param-type"><code>Promise</code></span>
 
 
     </dd>
 </dl>
 
+
+<div class="param-desc">
+    <p>p</p>
+</div>
+
     
+</div>
 
 
 
+<div class="section-examples">
+<h5>Example</h5>
+
+    <pre class="prettyprint"><code>const HFS = require('bfx-hf-strategy')
+const HFBT = require('bfx-hf-backtest')
+const Strategy = ... // strategy instance
+const candles = [...] // candle dataset
+
+const candleKey = HFS.candleMarketDataKey({
+  symbol: SYMBOLS.BTC_USD,
+  tf: TIME_FRAMES.ONE_HOUR
+})
+
+HFBT.execOffline(strat, {
+  trades: {},
+  candles: {
+    [candleKey]: candles,
+  }
+}).then((btState) => {
+  const { trades = [] } = btState
+
+  // analyze backtest trades...
+})</code></pre>
+
+</div>
+
+</div>
         
             
+<div class="section-method">
 
     
 
@@ -548,8 +545,40 @@ HFBT.execOffline(strat, {
 
 
 
+<div class="description">
+    <p>Executes a backtest for the specified period/symbol/tf, logs results to the
+console.</p>
+</div>
+
+
+
+
 
 <dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
 
     
     <dt class="tag-source">Source:</dt>
@@ -563,71 +592,12 @@ HFBT.execOffline(strat, {
     
 
     
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
 </dl>
 
 
 
 
 
-<div class="description usertext">
-    <p>Executes a backtest for the specified period/symbol/tf, logs results to the
-console.</p>
-</div>
-
-
-
-
-
-
-
-
-
-    <h5>Example</h5>
-    
-    <pre class="prettyprint"><code>const HFBT = require('bfx-hf-backtest')
-const EMAStrategy = require('bfx-hf-strategy/examples/ema_cross')
-const { SYMBOLS, TIME_FRAMES } = require('bfx-hf-util')
-
-const now = Date.now()
-const market = {
-  symbol: SYMBOLS.XMR_USD,
-  tf: TIME_FRAMES.ONE_MINUTE
-}
-
-const strategy = EMAStrategy(market)
-
-await HFBT.execOnline([strategy], {
-  exchange: 'bitfinex',
-  from: now - (2 * 24 * 60 * 60 * 1000),
-  to: now,
-  trades: true,
-  candles: true,
-  ...market
-})</code></pre>
 
 
 
@@ -663,7 +633,7 @@ await HFBT.execOnline([strategy], {
             <td class="type">
             
                 
-<span class="param-type">Array.&lt;<a href="global.html#Strategy">Strategy</a>></span>
+<span class="param-type"><code>Array.&lt;<a href="global.html#Strategy">Strategy</a>></code></span>
 
 
             
@@ -673,7 +643,10 @@ await HFBT.execOnline([strategy], {
 
             
 
-            <td class="description last"><p>array of strategies to backtest</p></td>
+            <td class="description last">
+                <p>array of strategies to backtest</p>
+                
+            </td>
         </tr>
 
     
@@ -686,7 +659,7 @@ await HFBT.execOnline([strategy], {
             <td class="type">
             
                 
-<span class="param-type"><a href="global.html#BacktestParameters">BacktestParameters</a></span>
+<span class="param-type"><code><a href="global.html#BacktestParameters">BacktestParameters</a></code></span>
 
 
             
@@ -696,7 +669,10 @@ await HFBT.execOnline([strategy], {
 
             
 
-            <td class="description last"><p>backtest parameters</p></td>
+            <td class="description last">
+                <p>backtest parameters</p>
+                
+            </td>
         </tr>
 
     
@@ -716,33 +692,60 @@ await HFBT.execOnline([strategy], {
 
 
 
-
-
+<div class="section-returns">
 <h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>p</p>
-</div>
-
-
 
 <dl class="param-type">
     <dt>
-        Type
+        Type:
     </dt>
     <dd>
         
-<span class="param-type">Promise</span>
+<span class="param-type"><code>Promise</code></span>
 
 
     </dd>
 </dl>
 
+
+<div class="param-desc">
+    <p>p</p>
+</div>
+
     
+</div>
 
 
 
+<div class="section-examples">
+<h5>Example</h5>
+
+    <pre class="prettyprint"><code>const HFBT = require('bfx-hf-backtest')
+const EMAStrategy = require('bfx-hf-strategy/examples/ema_cross')
+const { SYMBOLS, TIME_FRAMES } = require('bfx-hf-util')
+
+const now = Date.now()
+const market = {
+  symbol: SYMBOLS.XMR_USD,
+  tf: TIME_FRAMES.ONE_MINUTE
+}
+
+const strategy = EMAStrategy(market)
+
+await HFBT.execOnline([strategy], {
+  exchange: 'bitfinex',
+  from: now - (2 * 24 * 60 * 60 * 1000),
+  to: now,
+  trades: true,
+  candles: true,
+  ...market
+})</code></pre>
+
+</div>
+
+</div>
         
     
 
@@ -756,23 +759,15 @@ await HFBT.execOnline([strategy], {
 
 
 
-    
-    
 </div>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sat Mar 14 2020 16:36:56 GMT+0700 (Indochina Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+    Generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sat Mar 14 2020 21:59:47 GMT+0700 (Indochina Time) using the Minami theme.
 </footer>
 
 <script>prettyPrint();</script>
-<script src="scripts/polyfill.js"></script>
 <script src="scripts/linenumber.js"></script>
-
-<script src="scripts/search.js" defer></script>
-
-
-
 </body>
 </html>
