@@ -4,9 +4,9 @@
     "dictionaries": ["jsdoc"]
   },
   "source": {
-    "include": ["lib", "DOCUMENTATION.md"],
+    "include": ["lib", "DOCUMENTATION.md", "node_modules/bfx-hf-backtest/lib"],
     "includePattern": ".js$",
-    "excludePattern": "(node_modules/|docs)"
+    "excludePattern": "(docs)"
   },
   "plugins": [
     "plugins/markdown"
@@ -20,7 +20,7 @@
   "opts": {
     "destination": "./docs/",
     "encoding": "utf8",
-    "private": true,
+    "private": false,
     "recurse": true,
     "template": "./node_modules/docdash"
   },

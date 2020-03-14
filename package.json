@@ -64,6 +64,8 @@
     "babel-plugin-lodash": "^3.2.11",
     "babel-preset-env": "^1.4.0",
     "babel-preset-stage-0": "^6.24.1",
+    "bfx-hf-backtest": "^1.0.5",
+    "bfx-hf-strategy-data": "^1.0.0",
     "bitfinex-api-node": "^4.0.0",
     "chai": "^4.2.0",
     "cli-table": "^0.3.1",
