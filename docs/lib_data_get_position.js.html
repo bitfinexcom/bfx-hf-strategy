@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>UpdateHandlers - Documentation</title>
+    <title>lib/data/get_position.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -34,136 +34,45 @@
 
 <div id="main">
     
-    <h1 class="page-title">UpdateHandlers</h1>
+    <h1 class="page-title">lib/data/get_position.js</h1>
     
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-            
-        
-    
-</header>
-
-<article>
-    
-        <div class="container-overview">
-        
-            
-                <div class="description usertext"><p>Strategy update handlers</p></div>
-            
-
-            
-                
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_updates_index.js.html">lib/updates/index.js</a>, <a href="lib_updates_index.js.html#line11">line 11</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-        
-        </div>
-    
-
-    
-
-    
-
-    
-    
-    
-
-     
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict'
+
+const _isString = require('lodash/isString')
+const getDefaultSymbol = require('./get_default_symbol')
+
+/**
+ * Returns the position for the specified symbol
+ *
+ * @memberOf module:Data
+ *
+ * @param {StrategyState} state - strategy state
+ * @param {string} [forSymbol] - defaults to default strategy symbol
+ * @returns {Position} position - may be null
+ */
+const getPosition = (state = {}, forSymbol) => {
+  const { positions = {} } = state
+  const symbol = forSymbol || getDefaultSymbol(state)
+
+  if (!_isString(symbol)) {
+    throw new Error('no default symbol provided')
+  }
+
+  return positions[symbol] || null
+}
+
+module.exports = getPosition
+</code></pre>
+        </article>
+    </section>
 
 
 

@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>UpdateHandlers - Documentation</title>
+    <title>lib/position/update_position_with_order.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -34,136 +34,92 @@
 
 <div id="main">
     
-    <h1 class="page-title">UpdateHandlers</h1>
+    <h1 class="page-title">lib/position/update_position_with_order.js</h1>
     
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-            
-        
-    
-</header>
-
-<article>
-    
-        <div class="container-overview">
-        
-            
-                <div class="description usertext"><p>Strategy update handlers</p></div>
-            
-
-            
-                
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_updates_index.js.html">lib/updates/index.js</a>, <a href="lib_updates_index.js.html#line11">line 11</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-        
-        </div>
-    
-
-    
-
-    
-
-    
-    
-    
-
-     
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict'
+
+const debug = require('debug')('bfx:hf:strategy:position:update-with-order')
+const _isFunction = require('lodash/isFunction')
+const _isObject = require('lodash/isObject')
+
+const getDefaultSymbol = require('../data/get_default_symbol')
+const submitTrade = require('../orders/submit_trade')
+const getPosition = require('../data/get_position')
+const validateOrderParams = require('../orders/validate_order_params')
+const throwIfOrderClosesPosition = require('../errors/throw_if_order_closes_position')
+const updatePositionWithTrade = require('../data/update_position_with_trade')
+const positionPL = require('../data/position_pl')
+
+/**
+ * Submits a new order via ws2 with the supplied parameters, creates a new
+ * strategy trade and updates the current position.
+ *
+ * If no ws client is available, no data is saved &amp; no order is dispatched
+ *
+ * @memberOf module:Positions
+ * @throws {Error} Fails if no position is open for the symbol, if the order
+ *   would close the position, or if given invalid order parameters
+ *
+ * @param {StrategyState} state - strategy state
+ * @param {OrderParameters} orderParams - order parameters
+ * @returns {Promise} p
+ */
+const updatePositionWithOrder = async (state = {}, orderParams = {}) => {
+  const { amount } = orderParams
+  const { onPositionUpdate, onOrderFill, backtesting } = state
+  const symbol = orderParams.symbol || getDefaultSymbol(state)
+  const position = getPosition(state, symbol)
+
+  if (!orderParams.symbol) {
+    orderParams.symbol = symbol
+  }
+
+  if (!_isObject(position)) {
+    throw new Error('no position is currently open')
+  }
+
+  validateOrderParams(state, orderParams)
+  throwIfOrderClosesPosition(state, orderParams)
+
+  const { o, trade } = await submitTrade(state, orderParams)
+  trade.pl = positionPL(position)
+  updatePositionWithTrade(position, trade)
+
+  if (!backtesting &amp;&amp; _isFunction(onOrderFill)) {
+    await onOrderFill(state, { order: o, trade })
+  }
+
+  if (_isFunction(onPositionUpdate)) {
+    await onPositionUpdate(state, {
+      position,
+      order: o,
+      trade
+    })
+  }
+
+  if (!backtesting) {
+    debug(
+      'UPDATE %s | delta %f | %f @ %f | %s',
+      symbol, amount, position.amount, position.price, o.type
+    )
+  }
+
+  state.positions[symbol] = position
+  state.trades.push(trade)
+}
+
+module.exports = updatePositionWithOrder
+</code></pre>
+        </article>
+    </section>
 
 
 

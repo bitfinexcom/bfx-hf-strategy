@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>UpdateHandlers - Documentation</title>
+    <title>lib/position/with_no_position.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -34,136 +34,41 @@
 
 <div id="main">
     
-    <h1 class="page-title">UpdateHandlers</h1>
+    <h1 class="page-title">lib/position/with_no_position.js</h1>
     
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-            
-        
-    
-</header>
-
-<article>
-    
-        <div class="container-overview">
-        
-            
-                <div class="description usertext"><p>Strategy update handlers</p></div>
-            
-
-            
-                
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_updates_index.js.html">lib/updates/index.js</a>, <a href="lib_updates_index.js.html#line11">line 11</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-        
-        </div>
-    
-
-    
-
-    
-
-    
-    
-    
-
-     
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict'
+
+const _isObject = require('lodash/isObject')
+const getPosition = require('../data/get_position')
+
+/**
+ * Calls the provided async function if no position is open for the symbol
+ *
+ * @memberOf module:Positions
+ *
+ * @param {StrategyState} state - strategy state
+ * @param {string} [symbol] - symbol
+ * @param {Function} func - async function to call if no position is open
+ * @returns {Promise} p
+ */
+module.exports = async (state = {}, symbol, func = async () => {}) => {
+  const position = getPosition(state, symbol)
+
+  if (!_isObject(position)) {
+    return func()
+  }
+}
+</code></pre>
+        </article>
+    </section>
 
 
 

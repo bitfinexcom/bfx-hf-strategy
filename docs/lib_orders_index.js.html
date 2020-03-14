@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>UpdateHandlers - Documentation</title>
+    <title>lib/orders/index.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -34,136 +34,37 @@
 
 <div id="main">
     
-    <h1 class="page-title">UpdateHandlers</h1>
+    <h1 class="page-title">lib/orders/index.js</h1>
     
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-            
-        
-    
-</header>
-
-<article>
-    
-        <div class="container-overview">
-        
-            
-                <div class="description usertext"><p>Strategy update handlers</p></div>
-            
-
-            
-                
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_updates_index.js.html">lib/updates/index.js</a>, <a href="lib_updates_index.js.html#line11">line 11</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-        
-        </div>
-    
-
-    
-
-    
-
-    
-    
-    
-
-     
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict'
+
+const validateOrderParams = require('./validate_order_params.js')
+const simulateOrderFill = require('./simulate_order_fill.js')
+const submitOrder = require('./submit_order.js')
+const submitTrade = require('./submit_trade.js')
+
+/**
+ * Order manipulation methods
+ *
+ * @module Orders
+ */
+module.exports = {
+  simulateOrderFill,
+  submitOrder,
+  submitTrade,
+  validateOrderParams
+}
+</code></pre>
+        </article>
+    </section>
 
 
 

@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>UpdateHandlers - Documentation</title>
+    <title>lib/position/close_position.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -34,136 +34,54 @@
 
 <div id="main">
     
-    <h1 class="page-title">UpdateHandlers</h1>
+    <h1 class="page-title">lib/position/close_position.js</h1>
     
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-            
-        
-    
-</header>
-
-<article>
-    
-        <div class="container-overview">
-        
-            
-                <div class="description usertext"><p>Strategy update handlers</p></div>
-            
-
-            
-                
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_updates_index.js.html">lib/updates/index.js</a>, <a href="lib_updates_index.js.html#line11">line 11</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-        
-        </div>
-    
-
-    
-
-    
-
-    
-    
-    
-
-     
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict'
+
+const _isObject = require('lodash/isObject')
+const closePositionWithOrder = require('./close_position_with_order')
+const getDefaultSymbol = require('../data/get_default_symbol')
+const getPosition = require('../data/get_position')
+
+/**
+ * Closes an open position with an order. Throws an error if no position is open
+ * for the order's symbol.
+ *
+ * @memberOf module:Positions
+ *
+ * @param {StrategyState} state - strategy state
+ * @param {OrderParameters} orderParams - order parameters
+ * @returns {Promise} p
+ */
+const closePosition = async (state = {}, orderParams = {}) => {
+  const {
+    symbol = getDefaultSymbol(state)
+  } = orderParams
+
+  const pos = getPosition(state, symbol)
+
+  if (!_isObject(pos)) {
+    throw new Error(`no position exists for ${symbol}`)
+  }
+
+  return closePositionWithOrder(state, {
+    ...orderParams,
+    amount: pos.amount * -1
+  })
+}
+
+module.exports = closePosition
+</code></pre>
+        </article>
+    </section>
 
 
 

@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>UpdateHandlers - Documentation</title>
+    <title>lib/position/open_position_market.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -34,136 +34,71 @@
 
 <div id="main">
     
-    <h1 class="page-title">UpdateHandlers</h1>
+    <h1 class="page-title">lib/position/open_position_market.js</h1>
     
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-            
-        
-    
-</header>
-
-<article>
-    
-        <div class="container-overview">
-        
-            
-                <div class="description usertext"><p>Strategy update handlers</p></div>
-            
-
-            
-                
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_updates_index.js.html">lib/updates/index.js</a>, <a href="lib_updates_index.js.html#line11">line 11</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-        
-        </div>
-    
-
-    
-
-    
-
-    
-    
-    
-
-     
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict'
+
+const _isFinite = require('lodash/isFinite')
+const { Order } = require('bfx-api-node-models')
+const { safeThrow } = require('../errors')
+const openPosition = require('./open_position')
+const { getLastPrice, getDefaultSymbol } = require('../data')
+
+/**
+ * Opens a new position with a market order. Pulls order timestamp and price
+ * from last received data for the order's symbol.
+ *
+ * @memberOf module:Positions
+ * @throws {Error} If no timestamp or price data available and none supplied
+ *
+ * @param {StrategyState} state - strategy state
+ * @param {OrderParameters} orderParams - order parameters
+ * @returns {Promise} p
+ */
+const openPositionMarket = async (state = {}, orderParams = {}) => {
+  const { margin } = state
+  const {
+    price: orderPrice,
+    mtsCreate: orderMTS,
+    symbol = getDefaultSymbol(state)
+  } = orderParams
+
+  const lastPriceData = getLastPrice(state, symbol)
+  const price = orderPrice || (lastPriceData || {}).price
+  const mts = orderMTS || (lastPriceData || {}).mts
+
+  if (!_isFinite(price)) {
+    safeThrow(
+      state, 'no price data available and no price supplied on order parameters'
+    )
+  } else if (!_isFinite(mts)) {
+    safeThrow(
+      state, 'no last timestamp available and none supplied on order parameters'
+    )
+  }
+
+  return openPosition(state, {
+    ...orderParams,
+    price,
+    mtsCreate: mts,
+    type: margin
+      ? Order.type.MARKET
+      : Order.type.EXCHANGE_MARKET
+  })
+}
+
+module.exports = openPositionMarket
+</code></pre>
+        </article>
+    </section>
 
 
 

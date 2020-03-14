@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>UpdateHandlers - Documentation</title>
+    <title>Backtest - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -34,7 +34,7 @@
 
 <div id="main">
     
-    <h1 class="page-title">UpdateHandlers</h1>
+    <h1 class="page-title">Backtest</h1>
     
 
     
@@ -57,7 +57,9 @@
         <div class="container-overview">
         
             
-                <div class="description usertext"><p>Strategy update handlers</p></div>
+                <div class="description usertext"><p>Functions for executing backtests with <code>bfx-hf-strategy</code> trading strategies,
+supporting both offline exec from a static dataset and online exec using a
+<code>bfx-hf-data-server</code> instance for loading live data as-needed.</p></div>
             
 
             
@@ -71,7 +73,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_updates_index.js.html">lib/updates/index.js</a>, <a href="lib_updates_index.js.html#line11">line 11</a>
+        <a href="node_modules_bfx-hf-backtest_lib_index.js.html">node_modules/bfx-hf-backtest/lib/index.js</a>, <a href="node_modules_bfx-hf-backtest_lib_index.js.html#line3">line 3</a>
     </li></ul></dd>
     
 
@@ -156,6 +158,592 @@
 
     
 
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".debugResults"><span class="type-signature">(static) </span>debugResults<span class="signature">(btState, summarize)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="node_modules_bfx-hf-backtest_lib_util_debug_results.js.html">node_modules/bfx-hf-backtest/lib/util/debug_results.js</a>, <a href="node_modules_bfx-hf-backtest_lib_util_debug_results.js.html#line19">line 19</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Logs backtest results to the console</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>btState</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#BacktestState">BacktestState</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last"><p>backtest state</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>summarize</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+                <td class="default">
+                
+                    <code>false</code>
+                
+                </td>
+            
+
+            <td class="description last"><p>if true, only a summary of results is displayed</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".execOffline"><span class="type-signature">(async, static) </span>execOffline<span class="signature">(strategy, args)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="node_modules_bfx-hf-backtest_lib_exec_offline.js.html">node_modules/bfx-hf-backtest/lib/exec_offline.js</a>, <a href="node_modules_bfx-hf-backtest_lib_exec_offline.js.html#line39">line 39</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Run an offline backtest with user-supplied data</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const HFS = require('bfx-hf-strategy')
+const HFBT = require('bfx-hf-backtest')
+const Strategy = ... // strategy instance
+const candles = [...] // candle dataset
+
+const candleKey = HFS.candleMarketDataKey({
+  symbol: SYMBOLS.BTC_USD,
+  tf: TIME_FRAMES.ONE_HOUR
+})
+
+HFBT.execOffline(strat, {
+  trades: {},
+  candles: {
+    [candleKey]: candles,
+  }
+}).then((btState) => {
+  const { trades = [] } = btState
+
+  // analyze backtest trades...
+})</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>strategy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#Strategy">Strategy</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>strategy to backtest</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>args</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#BacktestParameters">BacktestParameters</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>backtest parameters</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>p</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".execOnline"><span class="type-signature">(async, static) </span>execOnline<span class="signature">(strategies, args)</span><span class="type-signature"> &rarr; {Promise}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="node_modules_bfx-hf-backtest_lib_exec_online.js.html">node_modules/bfx-hf-backtest/lib/exec_online.js</a>, <a href="node_modules_bfx-hf-backtest_lib_exec_online.js.html#line54">line 54</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Executes a backtest for the specified period/symbol/tf, logs results to the
+console.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>const HFBT = require('bfx-hf-backtest')
+const EMAStrategy = require('bfx-hf-strategy/examples/ema_cross')
+const { SYMBOLS, TIME_FRAMES } = require('bfx-hf-util')
+
+const now = Date.now()
+const market = {
+  symbol: SYMBOLS.XMR_USD,
+  tf: TIME_FRAMES.ONE_MINUTE
+}
+
+const strategy = EMAStrategy(market)
+
+await HFBT.execOnline([strategy], {
+  exchange: 'bitfinex',
+  from: now - (2 * 24 * 60 * 60 * 1000),
+  to: now,
+  trades: true,
+  candles: true,
+  ...market
+})</code></pre>
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>strategies</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;<a href="global.html#Strategy">Strategy</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>array of strategies to backtest</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>args</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#BacktestParameters">BacktestParameters</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>backtest parameters</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>p</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
     
 
     

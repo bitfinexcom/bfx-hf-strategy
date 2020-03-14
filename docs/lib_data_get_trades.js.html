@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>UpdateHandlers - Documentation</title>
+    <title>lib/data/get_trades.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -34,136 +34,47 @@
 
 <div id="main">
     
-    <h1 class="page-title">UpdateHandlers</h1>
+    <h1 class="page-title">lib/data/get_trades.js</h1>
     
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-            
-        
-    
-</header>
-
-<article>
-    
-        <div class="container-overview">
-        
-            
-                <div class="description usertext"><p>Strategy update handlers</p></div>
-            
-
-            
-                
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_updates_index.js.html">lib/updates/index.js</a>, <a href="lib_updates_index.js.html#line11">line 11</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-        
-        </div>
-    
-
-    
-
-    
-
-    
-    
-    
-
-     
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict'
+
+const tradeMarketDataKey = require('./trade_market_data_key')
+
+/**
+ * Returns all known trades for the specified symbol
+ *
+ * @memberOf module:Data
+ *
+ * @param {StrategyState} state - strategy state
+ * @param {string} [symbol] - defaults to strategy symbol
+ * @returns {Trade[]} trades - sorted oldest first
+ */
+const getTrades = (state = {}, symbol = null) => {
+  const defaultSymbol = state.symbol
+
+  if (!defaultSymbol &amp;&amp; !symbol) {
+    throw new Error('symbol not provided and default missing')
+  }
+
+  const dataKey = tradeMarketDataKey({
+    symbol: symbol || defaultSymbol
+  })
+
+  return state.marketData[dataKey] || []
+}
+
+module.exports = getTrades
+</code></pre>
+        </article>
+    </section>
 
 
 

@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="utf-8">
+    <title>Helpers - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <input type="text" id="nav-search" placeholder="Search" />
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="module-Errors.ErrorInterruptExec.html">ErrorInterruptExec</a></li></ul><h3>Modules</h3><ul><li><a href="module-Backtest.html">Backtest</a><ul class='methods'><li data-type='method'><a href="module-Backtest.html#.debugResults">debugResults</a></li><li data-type='method'><a href="module-Backtest.html#.execOffline">execOffline</a></li><li data-type='method'><a href="module-Backtest.html#.execOnline">execOnline</a></li></ul></li><li><a href="module-Data.html">Data</a><ul class='methods'><li data-type='method'><a href="module-Data.html#.getCandle">getCandle</a></li><li data-type='method'><a href="module-Data.html#.getCandles">getCandles</a></li><li data-type='method'><a href="module-Data.html#.getDefaultCandles">getDefaultCandles</a></li><li data-type='method'><a href="module-Data.html#.getDefaultSymbol">getDefaultSymbol</a></li><li data-type='method'><a href="module-Data.html#.getDefaultTF">getDefaultTF</a></li><li data-type='method'><a href="module-Data.html#.getDefaultTrades">getDefaultTrades</a></li><li data-type='method'><a href="module-Data.html#.getIndicator">getIndicator</a></li><li data-type='method'><a href="module-Data.html#.getIndicators">getIndicators</a></li><li data-type='method'><a href="module-Data.html#.getLastMTS">getLastMTS</a></li><li data-type='method'><a href="module-Data.html#.getLastPrice">getLastPrice</a></li><li data-type='method'><a href="module-Data.html#.getNumCandles">getNumCandles</a></li><li data-type='method'><a href="module-Data.html#.getNumTrades">getNumTrades</a></li><li data-type='method'><a href="module-Data.html#.getPosition">getPosition</a></li><li data-type='method'><a href="module-Data.html#.getTrade">getTrade</a></li><li data-type='method'><a href="module-Data.html#.getTrades">getTrades</a></li><li data-type='method'><a href="module-Data.html#.isLong">isLong</a></li><li data-type='method'><a href="module-Data.html#.isShort">isShort</a></li><li data-type='method'><a href="module-Data.html#.positionPL">positionPL</a></li></ul></li><li><a href="module-Errors.html">Errors</a></li><li><a href="module-Helpers.html">Helpers</a><ul class='methods'><li data-type='method'><a href="module-Helpers.html#.h.condition.inAPosition">h.condition.inAPosition</a></li><li data-type='method'><a href="module-Helpers.html#.h.condition.indicatorsCrossed">h.condition.indicatorsCrossed</a></li><li data-type='method'><a href="module-Helpers.html#.h.getLastPrice">h.getLastPrice</a></li><li data-type='method'><a href="module-Helpers.html#.h.getState">h.getState</a></li><li data-type='method'><a href="module-Helpers.html#.h.inAPosition">h.inAPosition</a></li><li data-type='method'><a href="module-Helpers.html#.h.indicatorValues">h.indicatorValues</a></li></ul></li><li><a href="module-Indicators.html">Indicators</a></li><li><a href="module-Orders.html">Orders</a></li><li><a href="module-Positions.html">Positions</a><ul class='methods'><li data-type='method'><a href="module-Positions.html#.closeOpenPositions">closeOpenPositions</a></li><li data-type='method'><a href="module-Positions.html#.closePosition">closePosition</a></li><li data-type='method'><a href="module-Positions.html#.closePositionLimit">closePositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.closePositionMarket">closePositionMarket</a></li><li data-type='method'><a href="module-Positions.html#.closePositionWithOrder">closePositionWithOrder</a></li><li data-type='method'><a href="module-Positions.html#.module.exports">module.exports</a></li><li data-type='method'><a href="module-Positions.html#.module.exports">module.exports</a></li><li data-type='method'><a href="module-Positions.html#.openLongPosition">openLongPosition</a></li><li data-type='method'><a href="module-Positions.html#.openLongPositionLimit">openLongPositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.openLongPositionMarket">openLongPositionMarket</a></li><li data-type='method'><a href="module-Positions.html#.openPosition">openPosition</a></li><li data-type='method'><a href="module-Positions.html#.openPositionLimit">openPositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.openPositionMarket">openPositionMarket</a></li><li data-type='method'><a href="module-Positions.html#.openPositionWithOrder">openPositionWithOrder</a></li><li data-type='method'><a href="module-Positions.html#.openShortPosition">openShortPosition</a></li><li data-type='method'><a href="module-Positions.html#.openShortPositionLimit">openShortPositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.openShortPositionMarket">openShortPositionMarket</a></li><li data-type='method'><a href="module-Positions.html#.updateLongPosition">updateLongPosition</a></li><li data-type='method'><a href="module-Positions.html#.updateLongPositionLimit">updateLongPositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.updateLongPositionMarket">updateLongPositionMarket</a></li><li data-type='method'><a href="module-Positions.html#.updatePosition">updatePosition</a></li><li data-type='method'><a href="module-Positions.html#.updatePositionLimit">updatePositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.updatePositionMarket">updatePositionMarket</a></li><li data-type='method'><a href="module-Positions.html#.updatePositionWithOrder">updatePositionWithOrder</a></li><li data-type='method'><a href="module-Positions.html#.updateShortPosition">updateShortPosition</a></li><li data-type='method'><a href="module-Positions.html#.updateShortPositionLimit">updateShortPositionLimit</a></li><li data-type='method'><a href="module-Positions.html#.updateShortPositionMarket">updateShortPositionMarket</a></li></ul></li><li><a href="module-UpdateHandlers.html">UpdateHandlers</a></li><li><a href="module-Utility.html">Utility</a><ul class='methods'><li data-type='method'><a href="module-Utility.html#.execInterruptableHandler">execInterruptableHandler</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#defineStrategy">defineStrategy</a></li><li><a href="global.html#positionPL">positionPL</a></li><li><a href="global.html#safeThrow">safeThrow</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">Helpers</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        
+            
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+                <div class="description usertext"><p>A set of utility functions bound to the strategy they are used in, providing
+control over strategy execution, access to data, and order manipulation
+methods.</p></div>
+            
+
+            
+                
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_init_helpers_for_strategy.js.html">lib/init_helpers_for_strategy.js</a>, <a href="lib_init_helpers_for_strategy.js.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id=".h.condition.inAPosition"><span class="type-signature">(static) </span>h.condition.inAPosition<span class="signature">(symbol)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_init_helpers_for_strategy.js.html">lib/init_helpers_for_strategy.js</a>, <a href="lib_init_helpers_for_strategy.js.html#line101">line 101</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Interrupts strategy execution if not in a position for the specified
+symbol</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>symbol</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>defaults to default strategy symbol</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".h.condition.indicatorsCrossed"><span class="type-signature">(static) </span>h.condition.indicatorsCrossed<span class="signature">(iaID, ibID)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_init_helpers_for_strategy.js.html">lib/init_helpers_for_strategy.js</a>, <a href="lib_init_helpers_for_strategy.js.html#line81">line 81</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Interrupts strategy execution if the specified indicators did not cross
+values.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>iaID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ID of first indicator</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>ibID</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ID of second indicator</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc usertext">
+        <p>Fails if either indicator is unknown and backtesting; logs
+an error if executing live</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl class="param-type">
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".h.getLastPrice"><span class="type-signature">(static) </span>h.getLastPrice<span class="signature">(symbol, tf)</span><span class="type-signature"> &rarr; {number}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_init_helpers_for_strategy.js.html">lib/init_helpers_for_strategy.js</a>, <a href="lib_init_helpers_for_strategy.js.html#line47">line 47</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Returns the last received price (from a trade or candle) for the specified
+symbol/timeframe pair.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>symbol</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>defaults to default strategy symbol</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tf</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>defaults to default strategy timeframe</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>lastPrice</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".h.getState"><span class="type-signature">(static) </span>h.getState<span class="signature">()</span><span class="type-signature"> &rarr; {object}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_init_helpers_for_strategy.js.html">lib/init_helpers_for_strategy.js</a>, <a href="lib_init_helpers_for_strategy.js.html#line35">line 35</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Returns the strategy state</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>state</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".h.inAPosition"><span class="type-signature">(static) </span>h.inAPosition<span class="signature">(symbol)</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_init_helpers_for_strategy.js.html">lib/init_helpers_for_strategy.js</a>, <a href="lib_init_helpers_for_strategy.js.html#line66">line 66</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Returns true if a position is open for the specified symbol</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>symbol</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>defaults to default strategy symbol</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>inPosition</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id=".h.indicatorValues"><span class="type-signature">(static) </span>h.indicatorValues<span class="signature">()</span><span class="type-signature"> &rarr; {object}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="lib_init_helpers_for_strategy.js.html">lib/init_helpers_for_strategy.js</a>, <a href="lib_init_helpers_for_strategy.js.html#line56">line 56</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    <p>Returns a map of indicator values key'ed by indicator ID</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+<div class="param-desc">
+    <p>values</p>
+</div>
+
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on Sat Mar 14 2020 16:36:56 GMT+0700 (Indochina Time) using the <a href="https://github.com/clenemt/docdash">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+<script src="scripts/search.js" defer></script>
+
+
+
+</body>
+</html>

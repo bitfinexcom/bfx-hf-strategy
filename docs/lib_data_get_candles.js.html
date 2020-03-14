@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>UpdateHandlers - Documentation</title>
+    <title>lib/data/get_candles.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -34,136 +34,50 @@
 
 <div id="main">
     
-    <h1 class="page-title">UpdateHandlers</h1>
+    <h1 class="page-title">lib/data/get_candles.js</h1>
     
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-            
-        
-    
-</header>
-
-<article>
-    
-        <div class="container-overview">
-        
-            
-                <div class="description usertext"><p>Strategy update handlers</p></div>
-            
-
-            
-                
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_updates_index.js.html">lib/updates/index.js</a>, <a href="lib_updates_index.js.html#line11">line 11</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-        
-        </div>
-    
-
-    
-
-    
-
-    
-    
-    
-
-     
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict'
+
+const candleMarketDataKey = require('./candle_market_data_key')
+const getDefaultSymbol = require('./get_default_symbol')
+const getDefaultTF = require('./get_default_tf')
+
+/**
+ * Returns the candle dataset for the specified symbol/timeframe pair
+ *
+ * @memberOf module:Data
+ *
+ * @param {StrategyState} state - strategy state
+ * @param {string} forSymbol - defaults to strategy symbol
+ * @param {string} forTF - defaults to strategy tf
+ * @returns {Candle[]} candles - sorted oldest first
+ * @throws {Error} fails if either symbol or timeframe are not specified
+ */
+const getCandles = (state = {}, forSymbol, forTF) => {
+  const symbol = forSymbol || getDefaultSymbol(state)
+  const tf = forTF || getDefaultTF(state)
+
+  if (!symbol || !tf) {
+    throw new Error('either symbol/tf not provided and default(s) missing')
+  }
+
+  const dataKey = candleMarketDataKey({ symbol, tf })
+
+  return state.marketData[dataKey] || []
+}
+
+module.exports = getCandles
+</code></pre>
+        </article>
+    </section>
 
 
 

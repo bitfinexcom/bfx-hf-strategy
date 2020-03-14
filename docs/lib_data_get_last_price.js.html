@@ -3,7 +3,7 @@
 <head>
     
     <meta charset="utf-8">
-    <title>UpdateHandlers - Documentation</title>
+    <title>lib/data/get_last_price.js - Documentation</title>
     
     
     <script src="scripts/prettify/prettify.js"></script>
@@ -34,136 +34,62 @@
 
 <div id="main">
     
-    <h1 class="page-title">UpdateHandlers</h1>
+    <h1 class="page-title">lib/data/get_last_price.js</h1>
     
 
     
 
 
 
-
-<section>
-
-<header>
     
-        
-            
-        
-    
-</header>
-
-<article>
-    
-        <div class="container-overview">
-        
-            
-                <div class="description usertext"><p>Strategy update handlers</p></div>
-            
-
-            
-                
-
-
-
-
-<dl class="details">
-
-    
-    <dt class="tag-source">Source:</dt>
-    <dd class="tag-source"><ul class="dummy"><li>
-        <a href="lib_updates_index.js.html">lib/updates/index.js</a>, <a href="lib_updates_index.js.html#line11">line 11</a>
-    </li></ul></dd>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dl>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-        
-        </div>
-    
-
-    
-
-    
-
-    
-    
-    
-
-     
-
-    
-
-    
-
-    
-
-    
-
-    
-</article>
-
-</section>
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict'
+
+const _last = require('lodash/last')
+const getCandles = require('./get_candles')
+const getTrades = require('./get_trades')
+const getDefaultSymbol = require('./get_default_symbol')
+const getDefaultTF = require('./get_default_tf')
+
+/**
+ * Get the last price &amp; timestamp received for the specified symbol &amp; tf.
+ *
+ * @memberOf module:Data
+ *
+ * @param {StrategyState} state - strategy state
+ * @param {string} [forSymbol] - defaults to default strategy symbol
+ * @param {string} [forTF] - defaults to default strategy tf
+ * @returns {object} pp - price point, { mts, price } (null if unavailable)
+ */
+const getLastPrice = (state = {}, forSymbol, forTF) => {
+  const { candlePrice } = state
+  const tf = forTF || getDefaultTF(state)
+  const symbol = forSymbol || getDefaultSymbol(state)
+  const candles = getCandles(state, symbol, tf)
+  const trades = getTrades(state, symbol)
+  const lastCandle = _last(candles)
+  const lastTrade = _last(trades)
+
+  if (!lastCandle &amp;&amp; !lastTrade) {
+    return null
+  } else if (lastTrade &amp;&amp; lastTrade.mts > lastCandle.mts) {
+    return {
+      price: lastTrade.price,
+      mts: lastTrade.mts
+    }
+  } else {
+    return {
+      price: lastCandle[candlePrice],
+      mts: lastCandle.mts
+    }
+  }
+}
+
+module.exports = getLastPrice
+</code></pre>
+        </article>
+    </section>
 
 
 
