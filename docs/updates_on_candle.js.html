@@ -73,7 +73,6 @@ const onCandle = async (state = {}, candle = {}) => {
   }
 
   addIndicatorData(state, 'candle', candle)
-  // candle.iv = indicatorValues(state)
   addCandleData(state, candle)
 
   if (indicatorsReady(state)) {

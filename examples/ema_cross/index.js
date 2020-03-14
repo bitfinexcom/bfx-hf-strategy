@@ -19,8 +19,6 @@ module.exports = ({
   },
 
   onPriceUpdate: async (state = {}, update = {}) => {
-    const { price, mts } = update
-    const i = HFS.indicators(state)
     const iv = HFS.indicatorValues(state)
     const l = iv.emaL
     const s = iv.emaS
@@ -33,8 +31,4 @@ module.exports = ({
       return HFS.closePositionMarket(state)
     }
   }
-
-  onEnter: require('./on_enter'),
-  onUpdateLong: require('./on_update_long'),
-  onUpdateShort: require('./on_update_short')
 })
