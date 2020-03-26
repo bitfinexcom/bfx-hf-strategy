@@ -21,7 +21,7 @@
     "test": "npm run lint && npm run unit",
     "unit": "NODE_ENV=test NODE_PATH=lib/ nyc --check-coverage --lines 90 --branches 60 --functions 90 --statements 90 --reporter=lcov --reporter=html mocha -b --recursive",
     "test-without-coverage": "NODE_ENV=test mocha -R spec -b --recursive",
-    "build": "babel -q ./index.js -d ./dist && babel -q ./lib -d ./dist/lib && copy package.json dist",
+    "build": "babel ./index.js -d ./dist && babel ./lib -d ./dist/lib && copy package.json dist",
     "postinstall": "npm run build",
     "api_docs": "node_modules/jsdoc-to-markdown/bin/cli.js lib/define.js lib/data/*.js lib/indicators/*.js lib/position/*.js lib/updates/*.js > docs/api.md",
     "docs": "rm -rf docs && node_modules/.bin/jsdoc --configure .jsdoc.json --verbose"
