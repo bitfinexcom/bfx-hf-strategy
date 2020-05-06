@@ -4,7 +4,6 @@
 - feature: added plugin system
 - refactor: extracted stop/target logic into seperate plugins
 - refactor: updated all state manipulation methods to modify in place
-- refactor: mutate state in all methods instead of returning new state map
 - fix: set trade P/L in updatePositionWithOrder()
 
 # 1.0.4
