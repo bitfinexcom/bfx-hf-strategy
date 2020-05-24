@@ -1,4 +1,4 @@
-#### Overview
+### Overview
 
 Orders are submitted through the official [bitfinex-api-node](https://github.com/bitfinexcom/bitfinex-api-node) Bitfinex Node.JS library, and as such can be defined using the `Order` model included with [bfx-api-node-mode ](https://github.com/bitfinexcom/bfx-api-node-models). This removes the need to construct a new order packet for the WSv2 API, and validates parameters automatically.
 

@@ -4,9 +4,9 @@
     "dictionaries": ["jsdoc"]
   },
   "source": {
-    "include": ["lib", "DOCUMENTATION.md", "tutorials", "node_modules/bfx-hf-backtest/lib"],
+    "include": ["index.js", "lib"],
     "includePattern": ".js$",
-    "excludePattern": "(docs)"
+    "excludePattern": "(node_modules/|docs)"
   },
   "plugins": [
     "plugins/markdown"
@@ -22,8 +22,11 @@
     "encoding": "utf8",
     "private": false,
     "recurse": true,
-    "template": "./node_modules/minami",
-    "tutorials": "./tutorials/"
+    "template": "./node_modules/docdash"
   },
-  "package": ""
+  "docdash": {
+    "static": true,
+    "sort": true,
+    "search": true
+  }
 }
