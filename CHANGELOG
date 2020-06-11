@@ -1,7 +1,7 @@
 # 2.0.0
 - meta: improved doclets
 - feature: added plugin system
-- feature: add validate() util method
+- feature: added validate() method
 - refactor: extracted stop/target logic into seperate plugins
 - refactor: updated all state manipulation methods to modify in place
 - fix: set trade P/L in updatePositionWithOrder()
