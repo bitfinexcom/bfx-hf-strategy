@@ -11,9 +11,7 @@ const _require = require('sprintf-js'),
 
 const colors = require('colors/safe');
 
-const Table = require('cli-table');
-
-const moment = require('moment');
+const Table = require('cli-table2');
 /**
  * Prints strategy execution information to the console
  *
@@ -53,7 +51,7 @@ const logTrades = (strategy = {}) => {
       minPL = Math.min(minPL, t.pl);
       maxPL = Math.max(maxPL, t.pl);
       cl = t.pl === 0 ? colors.blue : t.pl > 0 ? colors.green : colors.red;
-      date = moment.utc(t.mts).format('YYYY-MM-DD hh:mm:ss');
+      date = new Date(t.mts).toLocaleString();
       table.push([date, t.symbol.substr(1), t.amount > 0 ? 'LONG' : 'SHORT', sprintf('%.2f', Math.abs(t.amount)), sprintf('%.2f', t.price), sprintf('%.2f', t.fee), (t.pl > 0 ? '+' : '') + sprintf('%.2f', t.pl), t.label || ''].map(row => cl(row)));
     }); // prints trades
 
