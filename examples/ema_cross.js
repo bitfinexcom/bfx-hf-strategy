@@ -7,11 +7,27 @@ const { EMA } = require('bfx-hf-indicators')
 const { SYMBOLS, TIME_FRAMES } = require('bfx-hf-util')
 const { Candle } = require('bfx-api-node-models')
 const { execOffline } = require('bfx-hf-backtest')
-const HFSData = require('bfx-hf-strategy-data')
+
+const rawCandleData = require('./btc_candle_data.json')
 const HFS = require('../')
 
 const SYMBOL = SYMBOLS.LEO_USD
 const TIME_FRAME = TIME_FRAMES.ONE_MINUTE
+
+// During real execution, candles can arrive from any market/at any time (if
+// sub'ed to multiple time frames); hence, each candle must include its origin
+// symbol/time frame pair.
+const market = {
+  symbol: SYMBOLS.BTC_USD,
+  tf: TIME_FRAMES.ONE_HOUR
+}
+
+const candles = rawCandleData
+  .sort((a, b) => a[0] - b[0])
+  .map(c => ({
+    ...(new Candle(c).toJS()),
+    ...market // attach market data
+  }))
 
 const strategy = HFS.define({
   id: 'ema_cross',
@@ -43,25 +59,6 @@ const strategy = HFS.define({
   }
 })
 
-const run = async () => {
-  const candleKey = HFS.candleMarketDataKey({
-    symbol: SYMBOL,
-    tf: TIME_FRAME
-  })
-
-  return execOffline(strategy, {
-    candles: {
-      [candleKey]: HFSData['trade:1m:tLEOUSD'].map(arr => ({
-        ...new Candle(arr),
-        symbol: SYMBOL,
-        tf: TIME_FRAME
-      }))
-    }
-  })
-}
-
-try {
-  run()
-} catch (e) {
+execOffline(strategy, { candles }).catch((e) => {
   debug('error: %s', e.message)
-}
+})

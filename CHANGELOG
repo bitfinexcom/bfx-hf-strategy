@@ -1,6 +1,5 @@
 # 2.0.0
-- meta: added JSDoc-generated HTML documentation
-- meta: improved/normalized documentation throughout entire repo
+- meta: improved doclets
 - feature: added plugin system
 - feature: add validate() util method
 - refactor: extracted stop/target logic into seperate plugins

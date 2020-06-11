@@ -2,12 +2,21 @@
 
 [![Build Status](https://travis-ci.org/bitfinexcom/bfx-hf-strategy.svg?branch=master)](https://travis-ci.org/bitfinexcom/bfx-hf-strategy)
 
-This repo serves as a framework for creating trading bots/strategies on the Bitfinex platform. It consists of a set of order methods and an architecture compatible with `bfx-hf-data-server` and `bfx-hf-backtest` for backtests on historical candle/trade data, which can be transitioned seamlessly to trading on the live markets.
+This repo serves as a framework for creating trading bots/strategies on the
+Bitfinex platform. It consists of a set of order methods and an architecture
+compatible with `bfx-hf-data-server` and `bfx-hf-backtest` for backtests on
+historical candle/trade data, which can be transitioned seamlessly to trading
+on the live markets.
 
-Strategies written using this framework must define a set of update methods, called on each tick (with either a trade or a candle), along with a set of indicators which are automatically updated on each tick. The indicators are made available to the strategy methods, and can be queried to direct trading behavior.
+Strategies written using this framework must define a set of update methods,
+called on each tick (with either a trade or a candle), along with a set of
+indicators which are automatically updated on each tick. The indicators are
+made available to the strategy methods, and can be queried to direct trading
+behavior.
 
 ### Features
-* Event-driven design approach allowing strategies to react to market updates in real-time
+* Event-driven design approach allowing strategies to react to market updates
+  in real-time
 * Compatibility with `bfx-hf-backtest` for backtest execution
 * Compatibility with `bfx-hf-strategy-exec` for execution on live markets
 
@@ -19,7 +28,9 @@ npm i --save bfx-hf-strategy
 
 ### Quickstart & Example
 
-Using `bfx-hf-stratey` implies writing a custom strategy utilizing the methods provided by the library. The following is an example of a valid strategy as defined within `examples/macd_cross`:
+Using `bfx-hf-stratey` implies writing a custom strategy utilizing the methods
+provided by the library. The following is an example of a valid strategy as
+defined within `examples/macd_cross`:
 
 ```js
 const { MACD } = require('bfx-hf-indicators')
@@ -59,9 +70,11 @@ module.exports = ({
 
 ### Docs
 
-Refer to [`/docs`](/docs) for JSDoc-generated HTML documentation, examples, and tutorials.
+API documentation can be found in [`docs/reference.md`](docs/reference.md), and
+examples in the [`examples`](examples) folder.
 
-Ready to run examples can be found in the [`examples/` folder](/examples)
+Documentation for available runtime methods resides in
+[`docs/runtime.md`](docs/runtime.md)
 
 ### Contributing
 
