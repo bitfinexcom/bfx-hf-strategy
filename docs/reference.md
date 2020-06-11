@@ -289,6 +289,9 @@ passed to onSeedCandle() (same candle, new prices)</p>
 <dd><p>Executes the provided handler while safely catching any ErrorInterruptExec
 errors. Allows for interrupting handler execution early. Syntactical sugar.</p>
 </dd>
+<dt><a href="#validateStrategy">validateStrategy(state)</a></dt>
+<dd><p>Validate a strategy instance</p>
+</dd>
 </dl>
 
 ## Typedefs
@@ -2225,6 +2228,22 @@ errors. Allows for interrupting handler execution early. Syntactical sugar.
 | handler | <code>function</code> | handler |
 | ...args | <code>string</code> \| <code>number</code> \| <code>Array</code> \| <code>object</code> | passed directly to handler |
 
+<a name="validateStrategy"></a>
+
+## validateStrategy(state)
+Validate a strategy instance
+
+**Kind**: global function  
+**Throws**:
+
+- <code>Error</code> fails if given an invalid strategy instance
+
+**See**: [StrategyState](#StrategyState)  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| state | [<code>StrategyState</code>](#StrategyState) | state to validate |
+
 <a name="OrderParameters"></a>
 
 ## OrderParameters : <code>object</code>
@@ -2323,25 +2342,19 @@ backtesting and live execution. The core of this library.
 | --- | --- | --- |
 | id | <code>string</code> | strategy ID |
 | name | <code>string</code> | strategy name (human readable) |
-| [candlePrice] | <code>string</code> | key on candle from which to pull price,   used for updating indicators. Defaults to 'close' |
+| makerFee | <code>number</code> | maker fee |
+| takerFee | <code>number</code> | taker fee |
 | marketData | <code>object</code> | internal map of market data, trades and  candles |
 | positions | <code>object</code> | internal map of positions key'ed by symbol |
 | trades | <code>Array.&lt;object&gt;</code> | array of trades performed by the strategy |
+| exec | <code>function</code> | strategy execution logic |
 | [plugins] | <code>Array.&lt;object&gt;</code> | array of plugins |
 | [margin] | <code>boolean</code> | if true, trades on margin, otherwise exchange |
 | [symbol] | <code>string</code> | default symbol for data/trades |
 | [tf] | <code>string</code> | default candle time frame |
 | [indicators] | <code>object</code> | managed indicators map |
-| [onPriceUpdate] | <code>function</code> | called on every price update |
-| [onEnter] | <code>function</code> | called when a position is opened |
-| [onUpdate] | <code>function</code> | called on every price update if a   position is open |
-| [onUpdateLong] | <code>function</code> | called if a long position is open |
-| [onUpdateShort] | <code>function</code> | called if a short position is open   closed |
-| [onPositionOpen] | <code>function</code> | called when a position is opened |
-| [onPositionUpdate] | <code>function</code> | called when a position is updated |
-| [onPositionClose] | <code>function</code> | called when a position is closed |
-| [onStart] | <code>function</code> | called on strategy execution start |
-| [onStop] | <code>function</code> | called on strategy execution end |
+| [helpers] | [<code>bfx-hf-strategy/RuntimeHelpers</code>](#module_bfx-hf-strategy/RuntimeHelpers) | helpers   module, bound to this strategy instance |
+| [candlePrice] | <code>string</code> | key on candle from which to pull price,   used for updating indicators. Defaults to 'close' |
 
 <a name="StrategyTrade"></a>
 
