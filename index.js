@@ -86,6 +86,7 @@ const orders = require('./lib/orders')
 const position = require('./lib/position')
 const updates = require('./lib/updates')
 const define = require('./lib/define')
+const validate = require('./lib/validate')
 
 require('./lib/types/position_parameters')
 require('./lib/types/strategy_state')
@@ -96,6 +97,7 @@ require('./lib/types/order')
 
 module.exports = {
   define,
+  validate,
 
   ...data,
   ...errors,
