@@ -2353,7 +2353,7 @@ backtesting and live execution. The core of this library.
 | [symbol] | <code>string</code> | default symbol for data/trades |
 | [tf] | <code>string</code> | default candle time frame |
 | [indicators] | <code>object</code> | managed indicators map |
-| [helpers] | [<code>bfx-hf-strategy/RuntimeHelpers</code>](#module_bfx-hf-strategy/RuntimeHelpers) | helpers   module, bound to this strategy instance |
+| [helpers] | <code>bfx-hf-strategy/RuntimeHelpers</code> | helpers module   bound to this strategy instance |
 | [candlePrice] | <code>string</code> | key on candle from which to pull price,   used for updating indicators. Defaults to 'close' |
 
 <a name="StrategyTrade"></a>

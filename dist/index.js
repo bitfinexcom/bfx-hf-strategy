@@ -88,15 +88,21 @@ const orders = require('./lib/orders');
 
 const define = require('./lib/define');
 
+const validate = require('./lib/validate');
+
 const updates = require('./lib/updates');
 
 const position = require('./lib/position');
 
-const validate = require('./lib/validate');
-
 const indicators = require('./lib/indicators');
 
 const logTrades = require('./lib/debug/log_trades');
+
+require('./lib/types/position_parameters');
+
+require('./lib/types/strategy_state');
+
+require('./lib/types/strategy_trade');
 
 module.exports = _objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread(_objectSpread({
   logTrades,

@@ -82,22 +82,17 @@ const define = require('./lib/define')
 const validate = require('./lib/validate')
 const updates = require('./lib/updates')
 const position = require('./lib/position')
-const validate = require('./lib/validate')
 const indicators = require('./lib/indicators')
 const logTrades = require('./lib/debug/log_trades')
 
 require('./lib/types/position_parameters')
 require('./lib/types/strategy_state')
 require('./lib/types/strategy_trade')
-require('./lib/types/candle')
-require('./lib/types/trade')
-require('./lib/types/order')
 
 module.exports = {
   logTrades,
   validate,
   define,
-  validate,
 
   ...data,
   ...errors,
