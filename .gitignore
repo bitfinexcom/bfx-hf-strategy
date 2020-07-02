@@ -3,6 +3,7 @@
 /.nyc_output
 /.vscode
 /coverage
+/.undodir
 
 .DS_Store
 npm-debug.log
