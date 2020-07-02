@@ -1,0 +1,89 @@
+{
+  "name": "bfx-hf-strategy",
+  "version": "2.0.0",
+  "description": "HF strategy module",
+  "main": "./dist/index.js",
+  "engines": {
+    "node": ">=8.3.0"
+  },
+  "files": [
+    "*.js",
+    "*.md",
+    "lib/**.js"
+  ],
+  "directories": {
+    "lib": "lib"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test && npm run build && npm run docs && git add dist DOCUMENTATION.md"
+    }
+  },
+  "author": "Bitfinex",
+  "contributors": [
+    "Cris Mihalache <cris.m@bitfinex.com> (https://www.bitfinex.com)",
+    "Paolo Ardoino <paolo@bitfinex.com> (https://www.bitfinex.com)",
+    "Jacob Plaster <jacob.plaster@bitfinex.com> (https://www.bitfinex.com)"
+  ],
+  "license": "Apache-2.0",
+  "scripts": {
+    "lint": "./node_modules/.bin/eslint lib/ examples/ test/ index.js",
+    "test": "npm run lint && npm run unit",
+    "unit": "NODE_ENV=test NODE_PATH=lib/ nyc --check-coverage --lines 90 --branches 60 --functions 90 --statements 90 --reporter=lcov --reporter=html mocha -b --recursive",
+    "build": "babel ./index.js -d ./dist && babel ./lib -d ./dist/lib && copy package.json dist",
+    "docs": "rm -rf DOCUMENTATION.md && ./node_modules/.bin/jsdoc2md -f index.js 'lib/**/*.js' > DOCUMENTATION.md",
+    "update-deps": "./node_modules/.bin/updates -u -g -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitfinexcom/bfx-hf-strategy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bitfinexcom/bfx-hf-strategy/issues"
+  },
+  "keywords": [
+    "honey framework",
+    "bitfinex",
+    "bitcoin",
+    "BTC"
+  ],
+  "dependencies": {
+    "bfx-api-node-core": "^1.1.0",
+    "bfx-api-node-models": "^1.0.12",
+    "bfx-api-node-util": "^1.0.2",
+    "bfx-hf-indicators": "^2.0.0",
+    "bfx-hf-util": "^1.0.1",
+    "bluebird": "^3.7.2",
+    "cli-table2": "^0.2.0",
+    "colors": "^1.4.0",
+    "debug": "^4.1.1",
+    "lodash": "^4.17.10",
+    "p-iteration": "^1.1.8",
+    "sprintf-js": "^1.1.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.10.1",
+    "@babel/plugin-transform-destructuring": "^7.10.1",
+    "@babel/plugin-transform-regenerator": "^7.10.1",
+    "@babel/preset-env": "^7.10.2",
+    "bfx-hf-backtest": "^1.0.5",
+    "bitfinex-api-node": "^4.0.0",
+    "chai": "^4.2.0",
+    "copy": "^0.3.1",
+    "eslint": "^7.2.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsdoc": "^27.0.4",
+    "eslint-plugin-lodash": "^7.1.0",
+    "eslint-plugin-mocha": "^7.0.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.2.5",
+    "jsdoc-to-markdown": "^6.0.1",
+    "mocha": "^8.0.1",
+    "nyc": "^15.1.0",
+    "updates": "^10.2.15"
+  }
+}
