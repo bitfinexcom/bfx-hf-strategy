@@ -9,6 +9,7 @@
   "files": [
     "*.js",
     "*.md",
+    "tutorials/*.md",
     "lib/**.js"
   ],
   "directories": {

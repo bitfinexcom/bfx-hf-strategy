@@ -1,9 +1,15 @@
 # 2.0.0
 - meta: improved doclets
+- meta: update babel deps & invocations
+- meta: made stricter/normalized ESLint config
+- meta: added `.mocharc.json`
+- meta: moved docs to `DOCUMENTATION.md`
 - feature: added plugin system
-- feature: added validate() method
+- feature: added validateStrategyInstance() method
+- feature: add `RuntimeHelpers`, bound to & provided to initialized strategy state on execution start.
+- refactpr replaced all runtime event hamdlers with a centra` `exec()`
 - refactor: extracted stop/target logic into seperate plugins
-- refactor: updated all state manipulation methods to modify in place
+- refactor: **updated all** state manipulation methods to modify in place
 - fix: set trade P/L in updatePositionWithOrder()
 
 # 1.0.4
