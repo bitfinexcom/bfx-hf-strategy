@@ -1,3 +1,7 @@
+# 1.0.5
+- remove babel compiling
+- add missing dependencies
+
 # 1.0.4
 - meta: bump bitfinex-api-node to v4
 
