@@ -35,7 +35,7 @@
     "BTC"
   ],
   "dependencies": {
-    "bfx-api-node-core": "^1.5.3",
+    "bfx-api-node-core": "^1.5.5",
     "bfx-api-node-models": "^1.4.1",
     "bfx-hf-indicators": "github:bitfinexcom/bfx-hf-indicators#v2.0.9",
     "bfx-hf-util": "github:bitfinexcom/bfx-hf-util#v1.0.12",
