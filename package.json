@@ -37,7 +37,7 @@
   "dependencies": {
     "bfx-api-node-core": "^1.5.3",
     "bfx-api-node-models": "^1.4.1",
-    "bfx-hf-indicators": "git+https://github.com/avsek477/bfx-hf-indicators.git#adding-post-script",
+    "bfx-hf-indicators": "git+https://github.com/bitfinexcom/bfx-hf-indicators.git#v2.1.0",
     "bfx-hf-util": "git+https://github.com/bitfinexcom/bfx-hf-util.git#v1.0.12",
     "bluebird": "^3.7.2",
     "debug": "^4.1.1",
