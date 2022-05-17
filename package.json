@@ -41,7 +41,8 @@
     "bfx-hf-util": "git+https://github.com/bitfinexcom/bfx-hf-util.git#v1.0.12",
     "bluebird": "^3.7.2",
     "debug": "^4.1.1",
-    "lodash": "^4.17.10"
+    "lodash": "^4.17.10",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "bitfinex-api-node": "^4.0.0",
