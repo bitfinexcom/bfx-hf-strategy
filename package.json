@@ -59,6 +59,7 @@
     "jsdoc-to-markdown": "^5.0.1",
     "mocha": "^6.2.0",
     "moment": "^2.22.2",
+    "sinon": "^14.0.0",
     "sprintf-js": "^1.1.1",
     "standard": "^14.2.0"
   }
