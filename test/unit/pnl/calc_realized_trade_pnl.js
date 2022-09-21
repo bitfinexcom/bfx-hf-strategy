@@ -5,9 +5,7 @@ const { calcRealizedTradePnl } = require('../../../lib/pnl')
 const BigNumber = require('bignumber.js')
 
 describe('calc trade pnl', () => {
-  const position = {
-    inventory: []
-  }
+  const inventory = []
 
   const trades = [
     {
@@ -56,11 +54,11 @@ describe('calc trade pnl', () => {
     let totalPnl = new BigNumber(0)
 
     for (const trade of trades) {
-      const tradePnl = calcRealizedTradePnl(position, trade)
+      const tradePnl = calcRealizedTradePnl(inventory, trade)
       totalPnl = totalPnl.plus(tradePnl)
     }
 
     expect(totalPnl.toString()).to.eq('504.5467792')
-    expect(position.inventory).to.have.length(0)
+    expect(inventory).to.have.length(0)
   })
 })
