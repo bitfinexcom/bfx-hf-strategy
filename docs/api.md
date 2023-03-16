@@ -176,9 +176,7 @@ strategy trade and updates the current position.</p>
 <p>If no ws client is available, no data is saved &amp; no order is dispatched</p>
 </dd>
 <dt><a href="#updatePositionWithTrade">updatePositionWithTrade(state, orderParams)</a> ⇒ <code>Promise</code></dt>
-<dd><p>Submits a new order via ws2 with the supplied parameters, creates a new
-strategy trade and updates the current position.</p>
-<p>If no ws client is available, no data is saved &amp; no order is dispatched</p>
+<dd><p>Updates the current position with the supplied trade.</p>
 </dd>
 <dt><a href="#updateShortPosition">updateShortPosition(state, orderParams)</a> ⇒ <code>Promise</code></dt>
 <dd><p>Updates a short position (negates passed amount)</p>
