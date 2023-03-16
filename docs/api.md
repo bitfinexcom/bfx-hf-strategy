@@ -78,6 +78,22 @@ results in a map matching the indicator map structure.</p>
 </dd>
 <dt><a href="#updateIndicatorData">updateIndicatorData(state, type, update, f)</a></dt>
 <dd></dd>
+<dt><a href="#calcRealizedTradePnl">calcRealizedTradePnl(state, trade)</a> ⇒ <code>number</code></dt>
+<dd><p>Calculates and returns realized P/L figure for a specific trade, taking into account all
+trades</p>
+</dd>
+<dt><a href="#calcRealizedPositionPnl">calcRealizedPositionPnl(state, position, currentPrice)</a> ⇒ <code>number</code></dt>
+<dd><p>Calculates and returns realized P/L figure for a specific position</p>
+</dd>
+<dt><a href="#calcUnrealizedPositionPnl">calcUnrealizedPositionPnl(state, position, currentPrice)</a> ⇒ <code>number</code></dt>
+<dd><p>Calculates and returns unrealized P/L figure for a specific position</p>
+</dd>
+<dt><a href="#calcRealizedStrategyPnl">calcRealizedStrategyPnl(strategyState)</a> ⇒ <code>number</code></dt>
+<dd><p>Calculates and returns realized P/L figure for the strategy</p>
+</dd>
+<dt><a href="#calcUnrealizedStrategyPnl">calcUnrealizedStrategyPnl(strategyState)</a> ⇒ <code>number</code></dt>
+<dd><p>Calculates and returns unrealized P/L figure for the strategy</p>
+</dd>
 <dt><a href="#closeOpenPositions">closeOpenPositions(state)</a> ⇒ <code>Promise</code></dt>
 <dd><p>Closes all open positions with market orders</p>
 </dd>
@@ -127,10 +143,6 @@ strategy trade and creates a position.</p>
 </dd>
 <dt><a href="#openShortPositionMarket">openShortPositionMarket(state, orderParams)</a> ⇒ <code>Promise</code></dt>
 <dd><p>Opens a short position (negates passed amount)</p>
-</dd>
-<dt><a href="#positionPL">positionPL(state, symbol, closePrice)</a> ⇒ <code>number</code></dt>
-<dd><p>Returns the P/L figure for the specified position, taking into account all
-trades &amp; a close with the provided price (optional)</p>
 </dd>
 <dt><a href="#updateLongPosition">updateLongPosition(state, orderParams)</a> ⇒ <code>Promise</code></dt>
 <dd></dd>
@@ -533,6 +545,61 @@ Returns the minimum seed period required for the strategy
 | update | <code>Object</code> \| <code>number</code> | 
 | f | <code>function</code> | 
 
+<a name="calcRealizedTradePnl"></a>
+
+## calcRealizedTradePnl(state, trade) ⇒ <code>number</code>
+**Kind**: global function
+**Returns**: <code>number</code> - tradePnl
+
+| Param | Type |
+| --- | --- |
+| state | <code>Object</code> |
+| trade | <code>Trade</code> |
+
+<a name="calcRealizedPositionPnl"></a>
+
+## calcRealizedPositionPnl(state, position, currentPrice) ⇒ <code>number</code>
+**Kind**: global function
+**Returns**: <code>number</code> - positionPnl
+
+| Param | Type |
+| --- | --- |
+| state | <code>Object</code> |
+| position | <code>Object</code> |
+| currentPrice | <code>number</code> |
+
+<a name="calcUnrealizedPositionPnl"></a>
+
+## calcUnrealizedPositionPnl(state, position, currentPrice) ⇒ <code>number</code>
+**Kind**: global function
+**Returns**: <code>number</code> - tradePnl
+
+| Param | Type |
+| --- | --- |
+| state | <code>Object</code> |
+| position | <code>Object</code> |
+| currentPrice | <code>number</code> |
+
+<a name="calcRealizedStrategyPnl"></a>
+
+## calcRealizedStrategyPnl(strategyState) ⇒ <code>number</code>
+**Kind**: global function
+**Returns**: <code>number</code> - strategyPnl
+
+| Param | Type |
+| --- | --- |
+| strategyState | <code>Object</code> | 
+
+<a name="calcUnrealizedStrategyPnl"></a>
+
+## calcUnrealizedStrategyPnl(strategyState) ⇒ <code>number</code>
+**Kind**: global function
+**Returns**: <code>number</code> - strategyPnl
+
+| Param | Type |
+| --- | --- |
+| strategyState | <code>Object</code> | 
+
 <a name="closeOpenPositions"></a>
 
 ## closeOpenPositions(state) ⇒ <code>Promise</code>
@@ -738,21 +805,6 @@ Opens a short position (negates passed amount)
 | state | <code>Object</code> |  |
 | orderParams | <code>Object</code> |  |
 | orderParams.amount | <code>number</code> | required |
-
-<a name="positionPL"></a>
-
-## positionPL(state, symbol, closePrice) ⇒ <code>number</code>
-Returns the P/L figure for the specified position, taking into account all
-trades & a close with the provided price (optional)
-
-**Kind**: global function  
-**Returns**: <code>number</code> - pl  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| state | <code>Object</code> |  |
-| symbol | <code>string</code> | defaults to default strat symbol |
-| closePrice | <code>number</code> | optional, used if position not already closed |
 
 <a name="updateLongPosition"></a>
 
