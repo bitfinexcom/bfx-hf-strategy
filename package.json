@@ -1,6 +1,6 @@
 {
   "name": "bfx-hf-strategy",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "HF strategy module",
   "main": "./index.js",
   "directories": {
@@ -37,7 +37,7 @@
   "dependencies": {
     "bfx-api-node-core": "^1.5.7",
     "bfx-api-node-models": "^1.6.2",
-    "bfx-hf-indicators": "git+https://github.com/bitfinexcom/bfx-hf-indicators.git#v2.1.1",
+    "bfx-hf-indicators": "git+https://github.com/bitfinexcom/bfx-hf-indicators.git#v2.2.0",
     "bfx-hf-util": "git+https://github.com/bitfinexcom/bfx-hf-util.git#v1.0.12",
     "bignumber.js": "^9.0.2",
     "bluebird": "^3.7.2",
