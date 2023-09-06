@@ -44,7 +44,7 @@ describe('calc fees of trade', () => {
 
     const fees = await calculateFees(rest, order, orderParams)
 
-    assert.calledWithExactly(stubAccountTrades, symbol, orderParams.submittedAt)
+    assert.calledWithExactly(stubAccountTrades, { symbol, start: orderParams.submittedAt })
     expect(fees).not.to.be.null
     expect(fees.amount.toString()).to.be.eq('-0.004')
     expect(fees.cost.toString()).to.be.eq('-80.76')
@@ -71,7 +71,7 @@ describe('calc fees of trade', () => {
 
     const fees = await calculateFees(rest, order, orderParams)
 
-    assert.calledWithExactly(stubAccountTrades, symbol, orderParams.submittedAt)
+    assert.calledWithExactly(stubAccountTrades, { symbol, start: orderParams.submittedAt })
     expect(fees).not.to.be.null
     expect(fees.amount.toString()).to.be.eq('-80.59848')
     expect(fees.cost.toString()).to.be.eq('-80.59848')
