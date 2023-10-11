@@ -42,7 +42,7 @@ describe('calc fees of trade', () => {
     }
     stubAccountTrades.resolves([trade])
 
-    const fees = await calculateFees(rest, order, orderParams)
+    const fees = await calculateFees(rest, order, orderParams, { baseCurrency: base })
 
     assert.calledWithExactly(stubAccountTrades, { symbol, start: orderParams.submittedAt })
     expect(fees).not.to.be.null
@@ -69,7 +69,7 @@ describe('calc fees of trade', () => {
     }
     stubAccountTrades.resolves([trade])
 
-    const fees = await calculateFees(rest, order, orderParams)
+    const fees = await calculateFees(rest, order, orderParams, { baseCurrency: base })
 
     assert.calledWithExactly(stubAccountTrades, { symbol, start: orderParams.submittedAt })
     expect(fees).not.to.be.null
