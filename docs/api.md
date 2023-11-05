@@ -70,6 +70,9 @@ results in a map matching the indicator map structure.</p>
 <dt><a href="#indicatorValues">indicatorValues(strategyState)</a> ⇒ <code>Object</code></dt>
 <dd><p>Returns a map of all indicator values for the provided strategy</p>
 </dd>
+<dt><a href="#logTrades">logTrades(strategyState)</a></dt>
+<dd><p>Returns a map of all indicator values for the provided strategy</p>
+</dd>
 <dt><a href="#resetIndicators">resetIndicators(state)</a></dt>
 <dd><p>Resets all of the strategy&#39;s indicators</p>
 </dd>
@@ -78,12 +81,34 @@ results in a map matching the indicator map structure.</p>
 </dd>
 <dt><a href="#updateIndicatorData">updateIndicatorData(state, type, update, f)</a></dt>
 <dd></dd>
+<dt><a href="#calculateFees">calculateFees(state, order, orderParams)</a> ⇒ <code>Promise</code></dt>
+<dd><p>Calculates feed for a specific order.</p>
+</dd>
+<dt><a href="#calcRealizedTradePnl">calcRealizedTradePnl(state, trade)</a> ⇒ <code>number</code></dt>
+<dd><p>Calculates and returns realized P/L figure for a specific trade, taking into account all
+trades</p>
+</dd>
+<dt><a href="#calcRealizedPositionPnl">calcRealizedPositionPnl(state, position, currentPrice)</a> ⇒ <code>number</code></dt>
+<dd><p>Calculates and returns realized P/L figure for a specific position</p>
+</dd>
+<dt><a href="#calcUnrealizedPositionPnl">calcUnrealizedPositionPnl(state, position, currentPrice)</a> ⇒ <code>number</code></dt>
+<dd><p>Calculates and returns unrealized P/L figure for a specific position</p>
+</dd>
+<dt><a href="#calcRealizedStrategyPnl">calcRealizedStrategyPnl(strategyState)</a> ⇒ <code>number</code></dt>
+<dd><p>Calculates and returns realized P/L figure for the strategy</p>
+</dd>
+<dt><a href="#calcUnrealizedStrategyPnl">calcUnrealizedStrategyPnl(strategyState)</a> ⇒ <code>number</code></dt>
+<dd><p>Calculates and returns unrealized P/L figure for the strategy</p>
+</dd>
 <dt><a href="#closeOpenPositions">closeOpenPositions(state)</a> ⇒ <code>Promise</code></dt>
 <dd><p>Closes all open positions with market orders</p>
 </dd>
 <dt><a href="#closePosition">closePosition(state, orderParams)</a> ⇒ <code>Promise</code></dt>
 <dd><p>Closes an open position with an order. Throws an error if no position is open
 for the order&#39;s symbol.</p>
+</dd>
+<dt><a href="#closePendingOrders">closePendingOrders(state)</a> ⇒ <code>Promise</code></dt>
+<dd><p>Closes all open positions with market orders.</p>
 </dd>
 <dt><a href="#closePositionLimit">closePositionLimit(state, orderParams)</a> ⇒ <code>Promise</code></dt>
 <dd><p>Closes a position with a limit order</p>
@@ -128,10 +153,6 @@ strategy trade and creates a position.</p>
 <dt><a href="#openShortPositionMarket">openShortPositionMarket(state, orderParams)</a> ⇒ <code>Promise</code></dt>
 <dd><p>Opens a short position (negates passed amount)</p>
 </dd>
-<dt><a href="#positionPL">positionPL(state, symbol, closePrice)</a> ⇒ <code>number</code></dt>
-<dd><p>Returns the P/L figure for the specified position, taking into account all
-trades &amp; a close with the provided price (optional)</p>
-</dd>
 <dt><a href="#updateLongPosition">updateLongPosition(state, orderParams)</a> ⇒ <code>Promise</code></dt>
 <dd></dd>
 <dt><a href="#updateLongPositionLimit">updateLongPositionLimit(state, orderParams)</a> ⇒ <code>Promise</code></dt>
@@ -153,6 +174,9 @@ trades &amp; a close with the provided price (optional)</p>
 <dd><p>Submits a new order via ws2 with the supplied parameters, creates a new
 strategy trade and updates the current position.</p>
 <p>If no ws client is available, no data is saved &amp; no order is dispatched</p>
+</dd>
+<dt><a href="#updatePositionWithTrade">updatePositionWithTrade(state, orderParams)</a> ⇒ <code>Promise</code></dt>
+<dd><p>Updates the current position with the supplied trade.</p>
 </dd>
 <dt><a href="#updateShortPosition">updateShortPosition(state, orderParams)</a> ⇒ <code>Promise</code></dt>
 <dd><p>Updates a short position (negates passed amount)</p>
@@ -498,6 +522,17 @@ Returns a map of all indicator values for the provided strategy
 | --- | --- |
 | strategyState | <code>Object</code> | 
 
+<a name="logTrades"></a>
+
+## logTrades(strategyState)
+Log all trades for the strategy
+
+**Kind**: global function
+
+| Param | Type |
+| --- | --- |
+| strategyState | <code>Object</code> | 
+
 <a name="resetIndicators"></a>
 
 ## resetIndicators(state)
@@ -533,6 +568,75 @@ Returns the minimum seed period required for the strategy
 | update | <code>Object</code> \| <code>number</code> | 
 | f | <code>function</code> | 
 
+<a name="calculateFees"></a>
+
+## calculateFees(state, order, orderParams) ⇒ <code>Promise</code>
+Calculates feed for a specific order.
+
+**Kind**: global function
+**Returns**: <code>Promise</code> - Object<{ amount: BigNumber, cost: BigNumber, currency: string, perc: BigNumber, isMaker: boolean }>
+
+| Param | Type |
+| --- | --- |
+| state | <code>Object</code> |
+| order | <code>Object</code> |
+| orderParams | <code>Object</code> |
+
+<a name="calcRealizedTradePnl"></a>
+
+## calcRealizedTradePnl(state, trade) ⇒ <code>number</code>
+**Kind**: global function
+**Returns**: <code>number</code> - tradePnl
+
+| Param | Type |
+| --- | --- |
+| state | <code>Object</code> |
+| trade | <code>Trade</code> |
+
+<a name="calcRealizedPositionPnl"></a>
+
+## calcRealizedPositionPnl(state, position, currentPrice) ⇒ <code>number</code>
+**Kind**: global function
+**Returns**: <code>number</code> - positionPnl
+
+| Param | Type |
+| --- | --- |
+| state | <code>Object</code> |
+| position | <code>Object</code> |
+| currentPrice | <code>number</code> |
+
+<a name="calcUnrealizedPositionPnl"></a>
+
+## calcUnrealizedPositionPnl(state, position, currentPrice) ⇒ <code>number</code>
+**Kind**: global function
+**Returns**: <code>number</code> - tradePnl
+
+| Param | Type |
+| --- | --- |
+| state | <code>Object</code> |
+| position | <code>Object</code> |
+| currentPrice | <code>number</code> |
+
+<a name="calcRealizedStrategyPnl"></a>
+
+## calcRealizedStrategyPnl(strategyState) ⇒ <code>number</code>
+**Kind**: global function
+**Returns**: <code>number</code> - strategyPnl
+
+| Param | Type |
+| --- | --- |
+| strategyState | <code>Object</code> | 
+
+<a name="calcUnrealizedStrategyPnl"></a>
+
+## calcUnrealizedStrategyPnl(strategyState) ⇒ <code>number</code>
+**Kind**: global function
+**Returns**: <code>number</code> - strategyPnl
+
+| Param | Type |
+| --- | --- |
+| strategyState | <code>Object</code> | 
+
 <a name="closeOpenPositions"></a>
 
 ## closeOpenPositions(state) ⇒ <code>Promise</code>
@@ -558,6 +662,18 @@ for the order's symbol.
 | --- | --- |
 | state | <code>Object</code> | 
 | orderParams | <code>Object</code> | 
+
+<a name="closePendingOrders"></a>
+
+## closePendingOrders(state) ⇒ <code>Promise</code>
+Closes all open positions with market orders.
+
+**Kind**: global function  
+**Returns**: <code>Promise</code> - p - resolves to nextState  
+
+| Param | Type |
+| --- | --- |
+| state | <code>Object</code> |
 
 <a name="closePositionLimit"></a>
 
@@ -739,21 +855,6 @@ Opens a short position (negates passed amount)
 | orderParams | <code>Object</code> |  |
 | orderParams.amount | <code>number</code> | required |
 
-<a name="positionPL"></a>
-
-## positionPL(state, symbol, closePrice) ⇒ <code>number</code>
-Returns the P/L figure for the specified position, taking into account all
-trades & a close with the provided price (optional)
-
-**Kind**: global function  
-**Returns**: <code>number</code> - pl  
-
-| Param | Type | Description |
-| --- | --- | --- |
-| state | <code>Object</code> |  |
-| symbol | <code>string</code> | defaults to default strat symbol |
-| closePrice | <code>number</code> | optional, used if position not already closed |
-
 <a name="updateLongPosition"></a>
 
 ## updateLongPosition(state, orderParams) ⇒ <code>Promise</code>
@@ -848,6 +949,19 @@ If no ws client is available, no data is saved & no order is dispatched
 | orderParams.symbol | <code>string</code> | 
 | orderParams.type | <code>string</code> | 
 | orderParams.amount | <code>number</code> | 
+
+<a name="updatePositionWithTrade"></a>
+
+## updatePositionWithTrade(state, trade) ⇒ <code>object</code>
+Updates the current position with the supplied trade
+
+**Kind**: global function  
+**Returns**: <code>object</code> - position - updated position object
+
+| Param | Type |
+| --- | --- |
+| state | <code>Object</code> | 
+| trade | <code>Object</code> |
 
 <a name="updateShortPosition"></a>
 
